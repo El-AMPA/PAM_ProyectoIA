@@ -66,7 +66,7 @@ public class PokemonBase : ScriptableObject
         get { return attack; }
     }
 
-    public int Deffense
+    public int Defense
     {
         get { return deffense; }
     }
@@ -109,7 +109,5 @@ public enum PokemonType
     Bug,
     Rock,
     Ghost,
-    Dark,
-    Steel,
     Dragon
 }
