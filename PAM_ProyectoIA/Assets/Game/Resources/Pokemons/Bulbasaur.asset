@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dfeb2cf2fa40ba45ab8f038bedb2c6c, type: 3}
   m_Name: Bulbasaur
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  frontSprite: {fileID: 0}
-  backSprite: {fileID: 0}
-  type1: 0
-  type2: 0
-  maxHP: 0
-  attack: 0
-  deffense: 0
-  spAttack: 0
-  spDefense: 0
-  speed: 0
+  name: Bulbasaur
+  description: El primero!
+  frontSprite: {fileID: 21300000, guid: 0f37bf3cf5680a64d863b5f155b2a597, type: 3}
+  backSprite: {fileID: 21300000, guid: aacaae602a38f884ab9e02e43de3736d, type: 3}
+  type1: 5
+  type2: 8
+  maxHP: 45
+  attack: 49
+  deffense: 49
+  spAttack: 65
+  spDefense: 65
+  speed: 45
