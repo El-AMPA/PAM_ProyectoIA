@@ -8,6 +8,7 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] BattleUnit enemyUnit;
     [SerializeField] BattleHud playerHud;
     [SerializeField] BattleHud enemyHud;
+    [SerializeField] BattleDialogBox dialogBox;
 
     private void Start()
     {
@@ -20,5 +21,7 @@ public class BattleSystem : MonoBehaviour
         playerHud.SetData(playerUnit.Pokemon);
         enemyUnit.Setup();
         enemyHud.SetData(enemyUnit.Pokemon);
+
+        StartCoroutine(dialogBox.TypeDialog($"A wild {playerUnit.Pokemon.Base.Name} appeared."));
     }
 }
