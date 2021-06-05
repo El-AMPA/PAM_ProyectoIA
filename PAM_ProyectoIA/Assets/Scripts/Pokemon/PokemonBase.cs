@@ -24,6 +24,9 @@ public class PokemonBase : ScriptableObject
     [SerializeField] int spDefense;
     [SerializeField] int speed;
 
+    //Needs to be reworked
+    [SerializeField] List<MoveBase> knownMoves;
+
     public string Name
     {
         get { return name; }
@@ -82,6 +85,11 @@ public class PokemonBase : ScriptableObject
     {
         get { return speed; }
     }
+
+    public List<MoveBase> KnownMoves
+    {
+        get { return knownMoves; }
+    }
 }
 
 public enum PokemonType
@@ -101,5 +109,7 @@ public enum PokemonType
     Bug,
     Rock,
     Ghost,
+    Dark,
+    Steel,
     Dragon
 }

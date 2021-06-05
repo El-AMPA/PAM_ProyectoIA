@@ -2442,8 +2442,10 @@ MonoBehaviour:
   - {fileID: 1883289753}
   - {fileID: 643564553}
   moveTexts:
-  - {fileID: 2147047569}
-  - {fileID: 129304400}
+  - {fileID: 579509599}
+  - {fileID: 175332451}
+  - {fileID: 1606447655}
+  - {fileID: 2061136313}
   ppText: {fileID: 2147047569}
   typeText: {fileID: 129304400}
   highlightedColor: {r: 0.8867924, g: 0.071110725, b: 0.071110725, a: 1}

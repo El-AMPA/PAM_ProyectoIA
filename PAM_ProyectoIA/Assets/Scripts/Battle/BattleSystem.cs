@@ -14,7 +14,8 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] BattleDialogBox dialogBox;
 
     BattleState state;
-    int currentActon;
+    int currentAction;
+    int currentMove;
 
     private void Start()
     {
@@ -27,8 +28,9 @@ public class BattleSystem : MonoBehaviour
         playerHud.SetData(playerUnit.Pokemon);
         enemyUnit.Setup();
         enemyHud.SetData(enemyUnit.Pokemon);
+        dialogBox.SetMoveNames(playerUnit.Pokemon.Moves);
 
-        yield return dialogBox.TypeDialog($"A wild {playerUnit.Pokemon.Base.Name} appeared.");
+        yield return dialogBox.TypeDialog($"A wild {enemyUnit.Pokemon.Base.Name} appeared.");
         yield return new WaitForSeconds(1f);
 
         PlayerAction();
@@ -55,33 +57,59 @@ public class BattleSystem : MonoBehaviour
         {
             HandleActionSelection();
         }
+        else if (state == BattleState.PlayerMove)
+        {
+            HandleMoveSelection();
+        }
     }
 
     void HandleActionSelection()
     {
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            if (currentActon < 1) currentActon++;
+            if (currentAction < 1) currentAction++;
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (currentActon > 0) currentActon--;
+            if (currentAction > 0) currentAction--;
         }
 
-        dialogBox.UpdateActionSelection(currentActon);
+        dialogBox.UpdateActionSelection(currentAction);
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            if(currentActon == 0)
+            if(currentAction == 0)
             {
                 //Fight
                 PlayerMove();
             }
             
-            else if (currentActon == 1)
+            else if (currentAction == 1)
             {
                 //Run
             }
         }
+    }
+
+    void HandleMoveSelection()
+    {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            if (currentMove < playerUnit.Pokemon.Moves.Count - 1) currentMove++;
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            if (currentMove > 0) currentMove--;
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            if (currentMove < playerUnit.Pokemon.Moves.Count - 2) currentMove += 2;
+        }
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            if (currentMove > 1) currentMove -= 2;
+        }
+
+        dialogBox.UpdateMoveSelection(currentMove, playerUnit.Pokemon.Moves[currentMove]);
     }
 }

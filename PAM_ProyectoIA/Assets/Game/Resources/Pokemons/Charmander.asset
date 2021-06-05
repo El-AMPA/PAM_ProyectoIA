@@ -24,3 +24,7 @@ MonoBehaviour:
   spAttack: 60
   spDefense: 50
   speed: 65
+  knownMoves:
+  - {fileID: 11400000, guid: b4e0bbc4c8c4cad49a73b904acef51da, type: 2}
+  - {fileID: 11400000, guid: e14eee1f66e2e1044b629211ccd91e33, type: 2}
+  - {fileID: 11400000, guid: 583a621b5b4331a4c999ca59ed4104d3, type: 2}

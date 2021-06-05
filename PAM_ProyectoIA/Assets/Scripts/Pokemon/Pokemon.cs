@@ -15,6 +15,12 @@ public class Pokemon
         Base = pBase;
         Level = pLevel;
         HP = MaxHP;
+        Moves = new List<Move>();
+
+        foreach (var move in pBase.KnownMoves)
+        {
+            Moves.Add(new Move(move));
+        }
     }
 
     public int MaxHP
