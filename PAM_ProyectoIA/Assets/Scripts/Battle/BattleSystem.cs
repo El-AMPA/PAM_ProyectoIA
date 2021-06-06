@@ -12,6 +12,8 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] BattleHud playerHud;
     [SerializeField] BattleHud enemyHud;
     [SerializeField] BattleDialogBox dialogBox;
+    [SerializeField] PokemonParty playerParty;
+    [SerializeField] PokemonParty enemyParty;
 
     BattleState state;
     int currentAction;
@@ -24,9 +26,9 @@ public class BattleSystem : MonoBehaviour
 
     public IEnumerator SetupBattle()
     {
-        playerUnit.Setup();
+        playerUnit.Setup(playerParty.GetHealthyPokemon());
         playerHud.SetData(playerUnit.Pokemon);
-        enemyUnit.Setup();
+        enemyUnit.Setup(enemyParty.GetHealthyPokemon());
         enemyHud.SetData(enemyUnit.Pokemon);
         dialogBox.SetMoveNames(playerUnit.Pokemon.Moves);
 
@@ -140,11 +142,26 @@ public class BattleSystem : MonoBehaviour
         {
             yield return dialogBox.TypeDialog($"{enemyUnit.Pokemon.Base.Name} Fainted!");
             enemyUnit.PlayFaintAnimation();
+
+            yield return new WaitForSeconds(1f);
+
+            var nextPokemon = enemyParty.GetHealthyPokemon();
+            if (nextPokemon != null)
+            {
+                enemyUnit.Setup(enemyParty.GetHealthyPokemon());
+                enemyHud.SetData(enemyUnit.Pokemon);
+
+                yield return dialogBox.TypeDialog($"Your rival sent {nextPokemon.Base.Name} out!");
+                yield return new WaitForSeconds(1f);
+                StartCoroutine(EnemyMove());
+            }
+            else { 
+                yield return dialogBox.TypeDialog("You won the battle!");
+                yield return new WaitForSeconds(5f);
+                //Volver al menú o lo que sea
+            }
         }
-        else
-        {
-            StartCoroutine(EnemyMove());
-        }
+        else StartCoroutine(EnemyMove());
     }
 
     IEnumerator EnemyMove()
@@ -168,6 +185,25 @@ public class BattleSystem : MonoBehaviour
         {
             yield return dialogBox.TypeDialog($"{playerUnit.Pokemon.Base.Name} Fainted!");
             playerUnit.PlayFaintAnimation();
+
+            yield return new WaitForSeconds(2f);
+
+            var nextPokemon = playerParty.GetHealthyPokemon();
+            if (nextPokemon != null)
+            {
+                playerUnit.Setup(playerParty.GetHealthyPokemon());
+                playerHud.SetData(playerUnit.Pokemon);
+                dialogBox.SetMoveNames(playerUnit.Pokemon.Moves);
+
+                yield return dialogBox.TypeDialog($"Go {nextPokemon.Base.Name}!");
+
+                PlayerAction();
+            }
+            else { 
+                yield return dialogBox.TypeDialog("You lost the battle...");
+                yield return new WaitForSeconds(5f);
+                //Volver al menú o lo que sea
+            }
         }
         else
         {
