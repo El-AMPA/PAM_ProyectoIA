@@ -116,8 +116,8 @@ public enum PokemonType
 
 public class TypeChart
 {
-    float[][] chart =
-   {//            NOR FIR WAT ELE GRA ICE FIG POI GRO FLY PSY BUG ROC GHO DRA DAR STE
+    static float[][] chart =
+    {//            NOR FIR WAT ELE GRA ICE FIG POI GRO FLY PSY BUG ROC GHO DRA DAR STE
      /*NOR*/ new float[]{ 1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,0.5f,0f, 1f, 1f, 0.5f},
      /*FIR*/ new float[]{ 1f,0.5f,0.5f,1f,2f,2f,1f,1f,1f,1f,1f,2f,0.5f,1f, 0.5f, 1f, 2f},
      /*WAT*/ new float[]{ 1f,2f,0.5f,1f,0.5f,1f,1f,1f,2f,1f,1f,1f,2f,1f, 0.5f, 1f, 1f},
@@ -136,4 +136,15 @@ public class TypeChart
      /*DAR*/ new float[]{ 1f,1f,1f,1f,1f,1f,0.5f,1f,1f,1f,2f,1f,1f,2f, 1f, 0.5f, 1f},
      /*STE*/ new float[]{ 1f,0.5f,0.5f,0.5f,1f,2f,1f,1f,1f,1f,1f,1f,2f,1f, 1f, 1f, 0.5f},
     };
+
+    public static float GetEffectiveness(PokemonType attackType, PokemonType defenseType)
+    {
+        if (attackType == PokemonType.None || defenseType == PokemonType.None)
+            return 1;
+
+        int row = (int)attackType - 1;
+        int col = (int)defenseType - 1;
+
+        return chart[row][col];
+    }
 }

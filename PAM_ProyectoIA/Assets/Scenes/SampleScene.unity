@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9847db17531537459295a01d4af9006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _base: {fileID: 11400000, guid: 07984c4e8af24f74f95a2660e64774a7, type: 2}
+  _base: {fileID: 11400000, guid: 3f2114b136f852743a0ed47554e7ba98, type: 2}
   level: 20
   isPlayerUnit: 0
 --- !u!1 &81221894
@@ -910,7 +910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9847db17531537459295a01d4af9006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _base: {fileID: 11400000, guid: 3f2114b136f852743a0ed47554e7ba98, type: 2}
+  _base: {fileID: 11400000, guid: 2e966a6592ced0744ae4d4b533982030, type: 2}
   level: 20
   isPlayerUnit: 1
 --- !u!1 &455488610
