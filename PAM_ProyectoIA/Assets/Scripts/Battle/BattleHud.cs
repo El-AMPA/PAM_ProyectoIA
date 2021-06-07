@@ -41,17 +41,17 @@ public class BattleHud : MonoBehaviour
 	}
 
 	void SetStatusText()
-    {
+	{
 		if(_pokemon.Status == null)
-        {
+		{
 			statusText.text = "";
-        }
-        else
-        {
+		}
+		else
+		{
 			statusText.text = _pokemon.Status.Id.ToString().ToUpper();
 			statusText.color = statusColors[_pokemon.Status.Id];
-        }
-    }
+		}
+	}
 
 	public IEnumerator UpdateHP()
 	{

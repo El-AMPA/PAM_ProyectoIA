@@ -68,7 +68,7 @@ public class Pokemon
 	}
 
 	void ResetStatBoosts()
-    {
+	{
 		StatBoosts = new Dictionary<Stat, int>()
 		{
 			{Stat.Attack, 0},
@@ -76,6 +76,8 @@ public class Pokemon
 			{Stat.SpAttack, 0},
 			{Stat.SpDefense, 0},
 			{Stat.Speed, 0},
+			{Stat.Accuracy, 0},
+			{Stat.Evasion, 0}
 		};
 	}
 
@@ -104,13 +106,13 @@ public class Pokemon
 			StatBoosts[stat] = Mathf.Clamp(StatBoosts[stat] + boost, -6, 6);
 
 			if (boost > 0)
-            {
+			{
 				StatusChanges.Enqueue($"{Base.Name}'s {stat} rose!");
-            }
-            else
-            {
+			}
+			else
+			{
 				StatusChanges.Enqueue($"{Base.Name}'s {stat} fell!");
-            }
+			}
 
 			Debug.Log(stat + "has been bosted to " + StatBoosts[stat]);
 		}
@@ -179,20 +181,20 @@ public class Pokemon
 	}
 
 	public void UpdateHP(int damage)
-    {
+	{
 		HP = Mathf.Clamp(HP - damage, 0, MaxHP);
 		HpChanged = true;
-    }
+	}
 
 	public void SetStatus(ConditionID conditionId)
-    {
+	{
 		if (Status != null) return;
 
 		Status = ConditionsDB.Conditions[conditionId];
 		Status?.OnStart?.Invoke(this);
 		StatusChanges.Enqueue($"{Base.Name} {Status.StartMessage}");
 		OnStatusChanged?.Invoke();
-    }
+	}
 
 	public void SetVolatileStatus(ConditionID conditionId)
 	{
@@ -210,13 +212,13 @@ public class Pokemon
 	}
 
 	public bool OnBeforeMove()
-    {
+	{
 		bool canPerformMove = true;
 		if (Status?.OnBeforeMove != null)
-        {
+		{
 			if (!Status.OnBeforeMove(this))
 				canPerformMove = false;
-        }
+		}
 
 		if (VolatileStatus?.OnBeforeMove != null)
 		{
@@ -225,19 +227,19 @@ public class Pokemon
 		}
 
 		return canPerformMove;
-    }
+	}
 
 	public void OnAfterTurn()
-    {
+	{
 		Status?.OnAfterTurn?.Invoke(this);
 		VolatileStatus?.OnAfterTurn?.Invoke(this);
 	}
 
 	public void CureStatus()
-    {
+	{
 		Status = null;
 		OnStatusChanged?.Invoke();
-    }
+	}
 
 	public void CureVolatileStatus()
 	{
