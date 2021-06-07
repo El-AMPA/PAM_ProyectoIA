@@ -1775,9 +1775,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemon:
   - _base: {fileID: 11400000, guid: 07984c4e8af24f74f95a2660e64774a7, type: 2}
-    level: 50
+    level: 1
   - _base: {fileID: 11400000, guid: 3f2114b136f852743a0ed47554e7ba98, type: 2}
-    level: 50
+    level: 1
 --- !u!4 &774563301
 Transform:
   m_ObjectHideFlags: 0
@@ -3926,10 +3926,6 @@ PrefabInstance:
     - target: {fileID: 1995399733330772399, guid: 572f98e7653ed1a4c9664bc4f467f068, type: 3}
       propertyPath: m_Name
       value: PartyMember
-      objectReference: {fileID: 0}
-    - target: {fileID: 1995399733330772399, guid: 572f98e7653ed1a4c9664bc4f467f068, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 572f98e7653ed1a4c9664bc4f467f068, type: 3}
