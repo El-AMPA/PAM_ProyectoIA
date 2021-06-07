@@ -241,6 +241,9 @@ public class BattleSystem : MonoBehaviour
 				else
 					targetUnit.Pokemon.ApplyBoosts(effects.Boosts);
 			}
+
+			yield return ShowStatusChanges(sourceUnit.Pokemon);
+			yield return ShowStatusChanges(targetUnit.Pokemon);
 		}
 		else
 		{
@@ -260,6 +263,15 @@ public class BattleSystem : MonoBehaviour
 			//StartCoroutine(CheckForBattleOver(targetUnit));
 		}
 	}
+
+	IEnumerator ShowStatusChanges(Pokemon pokemon)
+    {
+		while (pokemon.StatusChanges.Count > 0)
+        {
+			var message = pokemon.StatusChanges.Dequeue();
+			yield return dialogBox.TypeDialog(message);
+        }
+    }
 
 	IEnumerator CheckForBattleOver(BattleUnit faintedUnit)
 	{
