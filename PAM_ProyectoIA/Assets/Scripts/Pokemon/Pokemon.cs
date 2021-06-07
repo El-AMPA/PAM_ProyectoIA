@@ -54,13 +54,13 @@ public class Pokemon
 	void CalculateStats()
 	{
 		Stats = new Dictionary<Stat, int>();
-		Stats.Add(Stat.Attack, Mathf.FloorToInt((Base.Attack * Level) / 100f) + 5);
-		Stats.Add(Stat.Defense, Mathf.FloorToInt((Base.Defense * Level) / 100f) + 5);
-		Stats.Add(Stat.SpAttack, Mathf.FloorToInt((Base.SpAttack * Level) / 100f) + 5);
-		Stats.Add(Stat.SpDefense, Mathf.FloorToInt((Base.SpDefense * Level) / 100f) + 5);
-		Stats.Add(Stat.Speed, Mathf.FloorToInt((Base.Speed * Level) / 100f) + 5);
+		Stats.Add(Stat.Attack, Mathf.FloorToInt((2 * Base.Attack * Level) / 100f) + 5);
+		Stats.Add(Stat.Defense, Mathf.FloorToInt((2 * Base.Defense * Level) / 100f) + 5);
+		Stats.Add(Stat.SpAttack, Mathf.FloorToInt((2 * Base.SpAttack * Level) / 100f) + 5);
+		Stats.Add(Stat.SpDefense, Mathf.FloorToInt((2 * Base.SpDefense * Level) / 100f) + 5);
+		Stats.Add(Stat.Speed, Mathf.FloorToInt((2 * Base.Speed * Level) / 100f) + 5);
 
-		MaxHP = Mathf.FloorToInt((Base.Attack * Level) / 100f) + Level + 10;
+		MaxHP = Mathf.FloorToInt((2 * Base.MaxHP * Level) / 100f) + Level + 10;
 	}
 
 	int GetStat(Stat stat)
@@ -80,7 +80,7 @@ public class Pokemon
 
 	public void ApplyBoosts(List<StatBoost> statBoosts)
 	{
-		foreach(var statBoost in statBoosts)
+		foreach (var statBoost in statBoosts)
 		{
 			var stat = statBoost.stat;
 			var boost = statBoost.boost;
@@ -129,6 +129,10 @@ public class Pokemon
 
 		float type = TypeChart.GetEffectiveness(move.Base.Type, this.Base.Type1) * TypeChart.GetEffectiveness(move.Base.Type, this.Base.Type2);
 
+		float stab = 1f;
+		if (move.Base.Type == this.Base.Type1 || move.Base.Type == this.Base.Type2)
+			stab = 1.5f;
+
 		var damageDetails = new DamageDetails()
 		{
 			TypeEffectiveness = type,
@@ -139,9 +143,9 @@ public class Pokemon
 		float attack = (move.Base.Category == MoveCategory.Special) ? attacker.SpAttack : attacker.Attack;
 		float defense = (move.Base.Category == MoveCategory.Special) ? SpDefense : Defense;
 
-		float modifiers = Random.Range(0.85f, 1f) * type * critical;
+		float modifiers = Random.Range(0.85f, 1f) * type * critical * stab;
 		float a = (2 * attacker.Level + 10) / 250f;
-		float d = a * move.Base.Power * ((float)attack/ defense) + 2;
+		float d = a * move.Base.Power * ((float)attack / defense) + 2;
 		int damage = Mathf.FloorToInt(d * modifiers);
 
 		HP -= damage;
@@ -164,6 +168,5 @@ public class DamageDetails
 {
 	public bool Fainted { get; set; }
 	public float Critical { get; set; }
-
 	public float TypeEffectiveness { get; set; }
 }
