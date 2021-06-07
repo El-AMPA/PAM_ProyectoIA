@@ -270,11 +270,28 @@ public class BattleSystem : MonoBehaviour
 			yield return CheckForBattleOver(targetUnit);
 			//StartCoroutine(CheckForBattleOver(targetUnit));
 		}
+
+		//Para condiciones de estado tipo veneno o quemado que dañan al final del turno.
+		sourceUnit.Pokemon.OnAfterTurn();
+		yield return ShowStatusChanges(sourceUnit.Pokemon);
+		yield return sourceUnit.Hud.UpdateHP();
+		if (sourceUnit.Pokemon.HP <= 0)
+		{
+			yield return dialogBox.TypeDialog($"{sourceUnit.Pokemon.Base.Name} Fainted!");
+			sourceUnit.PlayFaintAnimation();
+
+			yield return new WaitForSeconds(1f);
+
+			yield return CheckForBattleOver(sourceUnit);
+			//StartCoroutine(CheckForBattleOver(targetUnit));
+		}
 	}
 
 	IEnumerator RunMoveEffects(Move move, Pokemon source, Pokemon target)
     {
 		var effects = move.Base.Effects;
+
+		//Aumento de stats
 		if (effects.Boosts != null)
 		{
 			if (move.Base.Target == MoveTarget.Self)
@@ -282,6 +299,12 @@ public class BattleSystem : MonoBehaviour
 			else
 				target.ApplyBoosts(effects.Boosts);
 		}
+
+		//Condiciones de estado
+		if(effects.Status != ConditionID.none)
+        {
+			target.SetStatus(effects.Status);
+        }
 
 		yield return ShowStatusChanges(source);
 		yield return ShowStatusChanges(target);
