@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class ConditionsDB
 {
+    public static void Init()
+    {
+        foreach(var kvp in Conditions)
+        {
+            var conditionId = kvp.Key;
+            var condition = kvp.Value;
+
+            condition.Id = conditionId;
+        }
+    }
+
     public static Dictionary<ConditionID, Condition> Conditions { get; set; } = new Dictionary<ConditionID, Condition>()
     {
         {ConditionID.psn,
@@ -87,11 +98,45 @@ public class ConditionsDB
                     return false;
                 }
             }
+        },
+        //Volatile Status Conditions
+        {ConditionID.confusion,
+            new Condition()
+            {
+                Name= "Confusion",
+                StartMessage="is now confused",
+                OnStart = (Pokemon pokemon) =>
+                {
+                    //Confused for 1-4 turns
+                    pokemon.VolatileStatusTime = Random.Range(1, 5);
+                    Debug.Log($"Will be confused for {pokemon.VolatileStatusTime} moves");
+                },
+                OnBeforeMove = (Pokemon pokemon) =>
+                {
+                    if (pokemon.VolatileStatusTime <= 0)
+                    {
+                        pokemon.CureVolatileStatus();
+                        pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} isn't confused anymore!");
+                        return true;
+                    }
+                    pokemon.VolatileStatusTime--;
+                    pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} is confused!");
+
+                    //50% chance of taking damage
+                    if(Random.Range(1,3) == 1) return true;
+
+                    //Hurt by confusion
+                    pokemon.UpdateHP(pokemon.MaxHP/8);
+                    pokemon.StatusChanges.Enqueue("It's so confused that it has hurt itself!");
+                    return false;
+                }
+            }
         }
     };
 
 }
 public enum ConditionID
 {
-    none, psn, brn, slp, par, frz
+    none, psn, brn, slp, par, frz,
+    confusion
 }

@@ -21,6 +21,7 @@ public class BattleSystem : MonoBehaviour
 
 	private void Start()
 	{
+		ConditionsDB.Init();
 		StartCoroutine(SetupBattle());
 	}
 
@@ -247,6 +248,7 @@ public class BattleSystem : MonoBehaviour
 		if (!canRunMove)
         {
 			yield return ShowStatusChanges(sourceUnit.Pokemon);
+			yield return sourceUnit.Hud.UpdateHP();
 			yield break;
         }
 
@@ -313,6 +315,12 @@ public class BattleSystem : MonoBehaviour
         {
 			target.SetStatus(effects.Status);
         }
+
+		//Condiciones de estado volátiles
+		if (effects.VolatileStatus != ConditionID.none)
+		{
+			target.SetVolatileStatus(effects.VolatileStatus);
+		}
 
 		yield return ShowStatusChanges(source);
 		yield return ShowStatusChanges(target);
