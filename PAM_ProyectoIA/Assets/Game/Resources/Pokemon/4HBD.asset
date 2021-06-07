@@ -24,4 +24,5 @@ MonoBehaviour:
   spAttack: 40
   spDefense: 70
   speed: 70
-  knownMoves: []
+  knownMoves:
+  - {fileID: 11400000, guid: 6a7c6541b60afa64bb39727d3ab00c83, type: 2}

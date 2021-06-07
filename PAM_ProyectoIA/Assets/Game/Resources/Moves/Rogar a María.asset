@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7812e6763365bcd48aa0438f416789f3, type: 3}
   m_Name: "Rogar a Mar\xEDa"
   m_EditorClassIdentifier: 
-  name: 
+  name: "Rogar a Mar\xEDa"
   description: 
   type: 2
   power: 999
   accuracy: 100
   pp: 50
-  category: 1
+  category: 2
   effects:
     boosts:
     - stat: 1

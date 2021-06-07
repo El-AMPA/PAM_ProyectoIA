@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7812e6763365bcd48aa0438f416789f3, type: 3}
   m_Name: "Traici\xF3n"
   m_EditorClassIdentifier: 
-  name: 
+  name: "Traici\xF3n"
   description: 
   type: 5
   power: 50
