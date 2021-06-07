@@ -42,10 +42,10 @@ public class BattleSystem : MonoBehaviour
 	}
 
 	IEnumerator BattleOver(bool won)
-    {
+	{
 		state = BattleState.BattleOver;
 		yield return OnBattleOver(won);
-    }
+	}
 
 	void ActionSelection()
 	{
@@ -229,14 +229,27 @@ public class BattleSystem : MonoBehaviour
 
 		sourceUnit.PlayAttackAnimation();
 		yield return new WaitForSeconds(1f);
-
 		targetUnit.PlayHitAnimation();
 
-		var damageDetails = targetUnit.Pokemon.TakeDamage(move, sourceUnit.Pokemon);
-		yield return targetUnit.Hud.UpdateHP();
-		yield return ShowDamageDetails(damageDetails);
+		if(move.Base.Category == MoveCategory.Status)
+		{
+			var effects = move.Base.Effects;
+			if(effects.Boosts != null)
+			{
+				if (move.Base.Target == MoveTarget.Self)
+					sourceUnit.Pokemon.ApplyBoosts(effects.Boosts);
+				else
+					targetUnit.Pokemon.ApplyBoosts(effects.Boosts);
+			}
+		}
+		else
+		{
+			var damageDetails = targetUnit.Pokemon.TakeDamage(move, sourceUnit.Pokemon);
+			yield return targetUnit.Hud.UpdateHP();
+			yield return ShowDamageDetails(damageDetails);
+		}
 
-		if (damageDetails.Fainted)
+		if (targetUnit.Pokemon.HP <= 0)
 		{
 			yield return dialogBox.TypeDialog($"{targetUnit.Pokemon.Base.Name} Fainted!");
 			targetUnit.PlayFaintAnimation();
@@ -281,15 +294,15 @@ public class BattleSystem : MonoBehaviour
 	}
 
 	IEnumerator OnBattleOver(bool won)
-    {
-        if (won)
-        {
+	{
+		if (won)
+		{
 			yield return dialogBox.TypeDialog("You won the battle!");
 			yield return new WaitForSeconds(5f);
 			//Volver al menú o lo que sea
 		}
 		else
-        {
+		{
 			yield return dialogBox.TypeDialog("You lost the battle...");
 			yield return new WaitForSeconds(5f);
 			//Volver al menú o lo que sea

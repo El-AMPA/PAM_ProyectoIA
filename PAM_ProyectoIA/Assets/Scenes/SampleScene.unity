@@ -170,8 +170,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerUnit: {fileID: 344788506}
   enemyUnit: {fileID: 61377924}
-  playerHud: {fileID: 342937189}
-  enemyHud: {fileID: 1909179039}
   dialogBox: {fileID: 1805846082}
   partyScreen: {fileID: 1807563950}
   playerParty: {fileID: 683442370}
@@ -265,6 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerUnit: 0
+  hud: {fileID: 1909179039}
 --- !u!1 &81221894
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,6 +911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerUnit: 1
+  hud: {fileID: 342937189}
 --- !u!1 &455488610
 GameObject:
   m_ObjectHideFlags: 0
@@ -1295,8 +1295,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 11.910004, y: -0.0000086427}
-  m_SizeDelta: {x: 24.03, y: 20.56}
+  m_AnchoredPosition: {x: 16.020004, y: 0.94}
+  m_SizeDelta: {x: 32.25, y: 22.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &582287957
 MonoBehaviour:
@@ -1325,7 +1325,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 2
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1633,10 +1633,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pokemon:
-  - _base: {fileID: 11400000, guid: 3f2114b136f852743a0ed47554e7ba98, type: 2}
-    level: 1
+  - _base: {fileID: 11400000, guid: 9a17bd2c7e1112b4a932df9dcd80e99b, type: 2}
+    level: 10
   - _base: {fileID: 11400000, guid: bc16de8d2e08dc2498dba33caf62a502, type: 2}
-    level: 1
+    level: 10
 --- !u!4 &683442371
 Transform:
   m_ObjectHideFlags: 0
@@ -1775,9 +1775,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemon:
   - _base: {fileID: 11400000, guid: 07984c4e8af24f74f95a2660e64774a7, type: 2}
-    level: 1
+    level: 10
   - _base: {fileID: 11400000, guid: 3f2114b136f852743a0ed47554e7ba98, type: 2}
-    level: 1
+    level: 10
 --- !u!4 &774563301
 Transform:
   m_ObjectHideFlags: 0
@@ -2222,8 +2222,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 11.910004, y: -0.0000086427}
-  m_SizeDelta: {x: 24.03, y: 20.56}
+  m_AnchoredPosition: {x: 17.384995, y: 0.38497}
+  m_SizeDelta: {x: 33.17, y: 22.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1310586080
 MonoBehaviour:
@@ -2250,9 +2250,9 @@ MonoBehaviour:
     m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 1
+    m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 2
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
