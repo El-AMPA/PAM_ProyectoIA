@@ -121,7 +121,7 @@ public class TypeChart
      /*NOR*/ new float[]{ 1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,0.5f,0f, 1f, 1f, 0.5f},
      /*FIR*/ new float[]{ 1f,0.5f,0.5f,1f,2f,2f,1f,1f,1f,1f,1f,2f,0.5f,1f, 0.5f, 1f, 2f},
      /*WAT*/ new float[]{ 1f,2f,0.5f,1f,0.5f,1f,1f,1f,2f,1f,1f,1f,2f,1f, 0.5f, 1f, 1f},
-     /*ELE*/ new float[]{ 1f,2f,0.5f,0.5f,1f,1f,1f,0f,2f,1f,1f,1f,1f,1f, 0.5f, 1f, 1f},
+     /*ELE*/ new float[]{ 1f,1f,2f,0.5f,1f,1f,1f,0f,2f,1f,1f,1f,1f,1f, 0.5f, 1f, 1f},
      /*GRA*/ new float[]{ 1f,0.5f,2f,1f,0.5f,1f,1f,0.5f,2f,0.5f,1f,0.5f,2f,1f, 0.5f, 1f, 0.5f},
      /*ICE*/ new float[]{ 1f,0.5f,0.5f,1f,2f,0.5f,1f,1f,2f,2f,1f,1f,1f,1f, 2f, 1f, 0.5f},
      /*FIG*/ new float[]{ 2f,1f,1f,1f,1f,2f,1f,0.5f,1f,0.5f,0.5f,0.5f,2f,0f, 1f, 2f, 2f},
