@@ -12,6 +12,7 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] BattleHud playerHud;
     [SerializeField] BattleHud enemyHud;
     [SerializeField] BattleDialogBox dialogBox;
+    [SerializeField] PartyScreen partyScreen;
     [SerializeField] PokemonParty playerParty;
     [SerializeField] PokemonParty enemyParty;
 
@@ -30,6 +31,9 @@ public class BattleSystem : MonoBehaviour
         playerHud.SetData(playerUnit.Pokemon);
         enemyUnit.Setup(enemyParty.GetHealthyPokemon());
         enemyHud.SetData(enemyUnit.Pokemon);
+
+        partyScreen.Init();
+
         dialogBox.SetMoveNames(playerUnit.Pokemon.Moves);
 
         yield return dialogBox.TypeDialog($"A wild {enemyUnit.Pokemon.Base.Name} appeared.");
@@ -66,14 +70,12 @@ public class BattleSystem : MonoBehaviour
 
     void HandleActionSelection()
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            if (currentAction < 1) currentAction++;
-        }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            if (currentAction > 0) currentAction--;
-        }
+        if (Input.GetKeyDown(KeyCode.RightArrow)) ++currentAction;
+        else if (Input.GetKeyDown(KeyCode.LeftArrow)) --currentAction;
+        else if (Input.GetKeyDown(KeyCode.DownArrow)) currentAction += 2;
+        else if (Input.GetKeyDown(KeyCode.UpArrow)) currentAction -= 2;
+
+        currentAction = Mathf.Clamp(currentAction, 0, 3);
 
         dialogBox.UpdateActionSelection(currentAction);
 
@@ -87,29 +89,36 @@ public class BattleSystem : MonoBehaviour
             
             else if (currentAction == 1)
             {
+                //Bag
+            }
+
+            if (currentAction == 2)
+            {
+                //Pokemon
+                OpenPartyScreen();
+            }
+
+            else if (currentAction == 3)
+            {
                 //Run
             }
         }
     }
 
+    void OpenPartyScreen()
+    {
+        partyScreen.SetPartyData(playerParty.Pokemons);
+        partyScreen.gameObject.SetActive(true);
+    }
+
     void HandleMoveSelection()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            if (currentMove < playerUnit.Pokemon.Moves.Count - 1) currentMove++;
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            if (currentMove > 0) currentMove--;
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            if (currentMove < playerUnit.Pokemon.Moves.Count - 2) currentMove += 2;
-        }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            if (currentMove > 1) currentMove -= 2;
-        }
+        if (Input.GetKeyDown(KeyCode.RightArrow)) ++currentMove;
+        else if (Input.GetKeyDown(KeyCode.LeftArrow)) --currentMove;
+        else if (Input.GetKeyDown(KeyCode.DownArrow)) currentMove += 2;
+        else if (Input.GetKeyDown(KeyCode.UpArrow)) currentMove -= 2;
+
+        currentMove = Mathf.Clamp(currentMove, 0, playerUnit.Pokemon.Moves.Count - 1);
 
         dialogBox.UpdateMoveSelection(currentMove, playerUnit.Pokemon.Moves[currentMove]);
 
@@ -118,6 +127,12 @@ public class BattleSystem : MonoBehaviour
             dialogBox.EnableMoveSelector(false);
             dialogBox.EnableDialogText(true);
             StartCoroutine(PerformPlayerMove());
+        }
+        else if (Input.GetKeyDown(KeyCode.X))
+        {
+            dialogBox.EnableMoveSelector(false);
+            dialogBox.EnableDialogText(true);
+            PlayerAction();
         }
     }
 

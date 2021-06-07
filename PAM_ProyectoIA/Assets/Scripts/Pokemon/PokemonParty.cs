@@ -7,6 +7,12 @@ public class PokemonParty : MonoBehaviour
 {
     [SerializeField] private List<Pokemon> pokemon;
 
+    public List<Pokemon> Pokemons
+    {
+        get { 
+            return pokemon; 
+        }
+    }
     private void Start()
     {
         foreach(var poke in pokemon)
