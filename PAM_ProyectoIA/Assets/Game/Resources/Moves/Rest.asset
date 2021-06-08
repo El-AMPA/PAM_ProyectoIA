@@ -16,9 +16,14 @@ MonoBehaviour:
   description: "The pok\xE9mon falls asleep and recovers full hp"
   type: 11
   power: 0
-  accuracy: 0
+  accuracy: 100
+  alwaysHits: 0
   pp: 10
+  priority: 0
   category: 2
   effects:
     boosts: []
+    status: 0
+    volatileStatus: 0
   target: 0
+  secondaries: []
