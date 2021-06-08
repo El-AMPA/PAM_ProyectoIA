@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum BattleState { Start, ActionSelection, MoveSelection, RunningTurn, Busy, PartyScreen, BattleOver }
 public enum BattleAction { Move, SwitchPokemon, UseItem, Run}
@@ -13,6 +14,8 @@ public class BattleSystem : MonoBehaviour
 	[SerializeField] PartyScreen partyScreen;
 	[SerializeField] PokemonParty playerParty;
 	[SerializeField] PokemonParty enemyParty;
+	[SerializeField] Image playerImage;
+	[SerializeField] Image trainerImage;
 
 	BattleState state;
 	BattleState? previState;
@@ -28,18 +31,35 @@ public class BattleSystem : MonoBehaviour
 
 	public IEnumerator SetupBattle()
 	{
+		playerUnit.Clear();
+		enemyUnit.Clear();
+
 		playerParty.Init();
 		enemyParty.Init();
 
-		playerUnit.Setup(playerParty.GetHealthyPokemon());
-		enemyUnit.Setup(enemyParty.GetHealthyPokemon());
+		playerUnit.gameObject.SetActive(false);
+		enemyUnit.gameObject.SetActive(false);
 
-		partyScreen.Init();
+		playerImage.gameObject.SetActive(true);
+		trainerImage.gameObject.SetActive(true);
+
+		yield return dialogBox.TypeDialog($"Trainer Pederico wants to battle!");
+
+		trainerImage.gameObject.SetActive(false);
+		enemyUnit.gameObject.SetActive(true);
+		var enemyPokemon = enemyParty.GetHealthyPokemon();
+		enemyUnit.Setup(enemyPokemon);
+		yield return dialogBox.TypeDialog($"He sends out {enemyPokemon.Base.Name}!");
+
+		playerImage.gameObject.SetActive(false);
+		playerUnit.gameObject.SetActive(true);
+		var playerPokemon = playerParty.GetHealthyPokemon();
+		playerUnit.Setup(playerPokemon);
+		yield return dialogBox.TypeDialog($"Go {playerPokemon.Base.Name}!");
 
 		dialogBox.SetMoveNames(playerUnit.Pokemon.Moves);
 
-		yield return dialogBox.TypeDialog($"A wild {enemyUnit.Pokemon.Base.Name} appeared.");
-
+		partyScreen.Init();
 		ActionSelection();
 	}
 
