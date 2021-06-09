@@ -188,6 +188,20 @@ public class Pokemon
 		HpChanged = true;
 	}
 
+	public void HealHP(int heal)
+    {
+		int preHealHp = HP;
+		HP = Mathf.Clamp(HP + heal, 0, MaxHP);
+		HpChanged = (preHealHp != HP);
+	}
+
+	public void HealToFull()
+    {
+		int preHealHp = HP;
+		HP = MaxHP;
+		HpChanged = (preHealHp != HP);
+	}
+
 	public void SetStatus(ConditionID conditionId)
 	{
 		if (Status != null) return;

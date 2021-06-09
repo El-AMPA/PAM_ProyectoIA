@@ -27,6 +27,7 @@ public class BattleSystem : MonoBehaviour
 	private void Start()
 	{
 		ConditionsDB.Init();
+		ItemsDB.Init();
 		StartCoroutine(SetupBattle());
 	}
 
@@ -306,15 +307,65 @@ public class BattleSystem : MonoBehaviour
 			playerUnit.Pokemon.CurrentMove = playerUnit.Pokemon.Moves[currentMove];
 			enemyUnit.Pokemon.CurrentMove = enemyUnit.Pokemon.GetRandomMove();
 
-			int playerMovePriority = playerUnit.Pokemon.CurrentMove.Base.Priority;
-			int enemyMovePriority = enemyUnit.Pokemon.CurrentMove.Base.Priority;
+			bool itemUsed = false;
 
-			//Comprobar quién va primero
+			/*
+			 * Cómo debería funcionar:
+			 * 
+			 * ItemID item = enemyIA.useItem();
+			 * if (item != null){ //Null implica que no quiere usar un objeto.
+			 *		ItemsDB.Items[item].OnUse.Invoke(enemyUnit.Pokemon); //Se aplica el objeto.
+			 *		enemyParty.consumeItem(item);
+			 *		
+			 *		yield return ShowStatusChanges(enemyUnit.Pokemon);
+			 *		yield return enemyUnit.Hud.UpdateHP();
+			 * }
+			 * 
+			 * ...
+			 * 
+			 * if (item != null) {
+			 *		... que el enemigo no realice ningún movimiento.
+			 * }
+			 */
+
+			//Totalmente temporal. Mirad lo de arriba.
+			if (enemyParty.NFullHeals > 0)
+            {
+				Debug.Log("Quiero usar un Full Heal");
+				ItemsDB.Items[ItemID.fullHeal].OnUse.Invoke(enemyUnit.Pokemon);
+				enemyParty.consumeItem(ItemID.fullHeal);
+				itemUsed = true;
+			}
+			else if (enemyParty.NMaxPotions > 0)
+            {
+				Debug.Log("Quiero usar una Max Potion");
+				ItemsDB.Items[ItemID.maxPotion].OnUse.Invoke(enemyUnit.Pokemon);
+				enemyParty.consumeItem(ItemID.maxPotion);
+				itemUsed = true;
+            }
+
+
 			bool playerGoesFirst = true;
-			if (enemyMovePriority > playerMovePriority) 
-				playerGoesFirst = false;
-			else if(enemyMovePriority == playerMovePriority)
-				playerGoesFirst = playerUnit.Pokemon.Speed >= enemyUnit.Pokemon.Speed;
+
+			//Mostrar los cambios tras el uso de objeto
+			if (itemUsed)
+            {
+				yield return enemyUnit.Hud.UpdateHP();
+				yield return ShowStatusChanges(enemyUnit.Pokemon);
+			}
+
+			else
+            {
+				int playerMovePriority = playerUnit.Pokemon.CurrentMove.Base.Priority;
+				int enemyMovePriority = enemyUnit.Pokemon.CurrentMove.Base.Priority;
+
+				//Comprobar quién va primero
+				if (enemyMovePriority > playerMovePriority)
+					playerGoesFirst = false;
+				else if (enemyMovePriority == playerMovePriority)
+					playerGoesFirst = playerUnit.Pokemon.Speed >= enemyUnit.Pokemon.Speed;
+			}
+			
 
 			var firstUnit = (playerGoesFirst) ? playerUnit : enemyUnit;
 			var secondUnit = (playerGoesFirst) ? enemyUnit : playerUnit;
@@ -329,13 +380,15 @@ public class BattleSystem : MonoBehaviour
 			if(secondPokemon.HP > 0)
             {
 				//Segundo turno (si no se ha acabado la batalla)
-				yield return RunMove(secondUnit, firstUnit, secondUnit.Pokemon.CurrentMove);
+				if (!itemUsed) yield return RunMove(secondUnit, firstUnit, secondUnit.Pokemon.CurrentMove);
 				yield return RunAfterTurn(secondUnit);
 				if (state == BattleState.BattleOver) yield break;
 			}
 		}
         else
         {
+			//Aquí también tendrían que ir los items
+
 			if(playerAction == BattleAction.SwitchPokemon)
             {
 				var selectedPokemon = playerParty.Pokemons[currentMember];

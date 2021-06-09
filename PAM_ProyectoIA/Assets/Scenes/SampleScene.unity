@@ -854,6 +854,8 @@ MonoBehaviour:
     level: 10
   - _base: {fileID: 11400000, guid: bc16de8d2e08dc2498dba33caf62a502, type: 2}
     level: 10
+  nFullHeals: 0
+  nMaxPotions: 0
 --- !u!4 &683442371
 Transform:
   m_ObjectHideFlags: 0
@@ -995,6 +997,8 @@ MonoBehaviour:
     level: 10
   - _base: {fileID: 11400000, guid: 3f2114b136f852743a0ed47554e7ba98, type: 2}
     level: 10
+  nFullHeals: 0
+  nMaxPotions: 3
 --- !u!4 &774563301
 Transform:
   m_ObjectHideFlags: 0

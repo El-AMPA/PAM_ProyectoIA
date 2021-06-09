@@ -24,8 +24,21 @@ public class ItemsDB
 				StartMessage="'s statuses have been healed",
 				OnUse = (Pokemon pokemon) =>
                 {
-					pokemon.CureStatus();
-					pokemon.CureVolatileStatus();
+
+					if (pokemon.Status == null && pokemon.VolatileStatus == null)
+                    {
+						pokemon.StatusChanges.Enqueue($"Full heal had no effect on {pokemon.Base.Name}");
+					}
+					if (pokemon.Status != null)
+                    {
+						pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name}'s {pokemon.Status.ToString()} was healed");
+						pokemon.CureStatus();
+					}
+					if (pokemon.VolatileStatus != null)
+					{
+						pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name}'s {pokemon.VolatileStatus.ToString()} was healed");
+						pokemon.CureVolatileStatus();
+					}
                 }
             }
         },
@@ -36,7 +49,15 @@ public class ItemsDB
 				StartMessage=" has been healed to full",
 				OnUse = (Pokemon pokemon) =>
                 {
-					//Curar al pokemon
+					pokemon.HealToFull();
+					if (pokemon.HpChanged)
+                    {
+						pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} was healed to full");
+                    }
+					else
+                    {
+						pokemon.StatusChanges.Enqueue($"Max Potion had no effect on {pokemon.Base.Name}");
+					}
                 }
             }
 		}

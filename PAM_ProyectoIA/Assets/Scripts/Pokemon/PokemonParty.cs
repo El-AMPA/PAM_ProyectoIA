@@ -25,4 +25,32 @@ public class PokemonParty : MonoBehaviour
 	{
 		return pokemon.Where(x => x.HP > 0).FirstOrDefault();
 	}
+
+	[SerializeField] private int nFullHeals;
+
+	public float NFullHeals
+    {
+		get
+        {
+			return nFullHeals;
+        }
+    }
+
+	[SerializeField] private int nMaxPotions;
+
+	public float NMaxPotions
+	{
+		get
+		{
+			return nMaxPotions;
+		}
+	}
+
+	public void consumeItem(ItemID item)
+    {
+		if (item == ItemID.fullHeal) nFullHeals--;
+		else if (item == ItemID.maxPotion) nMaxPotions--;
+
+		Debug.Log($"Consumed a {item.ToString()}");
+    }
 }
