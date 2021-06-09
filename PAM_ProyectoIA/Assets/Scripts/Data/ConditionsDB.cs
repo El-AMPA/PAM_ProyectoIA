@@ -15,7 +15,7 @@ public class ConditionsDB
 		}
 	}
 
-	public static Dictionary<ConditionID, Condition> Conditions { get; set; } = new Dictionary<ConditionID, Condition>()
+public static Dictionary<ConditionID, Condition> Conditions { get; set; } = new Dictionary<ConditionID, Condition>()
 	{
 		{ConditionID.psn,
 			new Condition()
@@ -61,7 +61,7 @@ public class ConditionsDB
 			new Condition()
 			{
 				Name= "Freeze",
-				StartMessage="has been frozen",
+					StartMessage="has been frozen",
 				OnBeforeMove = (Pokemon pokemon) =>
 				{
 					if (Random.Range(1, 5) == 1){
