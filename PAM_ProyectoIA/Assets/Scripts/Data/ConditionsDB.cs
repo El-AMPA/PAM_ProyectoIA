@@ -125,6 +125,23 @@ public static Dictionary<ConditionID, Condition> Conditions { get; set; } = new 
 				}
 			}
 		},
+		{ConditionID.tox,
+			new Condition()
+			{
+				Name= "Toxic",
+				StartMessage="has been badly poisoned",
+				OnStart = (Pokemon pokemon) =>
+				{
+					pokemon.StatusTime = 1;
+				},
+				OnAfterTurn = (Pokemon pokemon) =>
+				{
+					pokemon.UpdateHP(Mathf.FloorToInt((pokemon.StatusTime * 6.25f * pokemon.MaxHP) / 100.0f));
+					pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} hurt itself due to toxic poison");
+					pokemon.StatusTime++;
+				}
+			}
+		},
 		//Volatile Status Conditions
 		{ConditionID.confusion,
 			new Condition()
@@ -163,6 +180,6 @@ public static Dictionary<ConditionID, Condition> Conditions { get; set; } = new 
 }
 public enum ConditionID
 {
-	none, psn, brn, slp, par, frz, rest,
+	none, psn, brn, slp, par, frz, rest, tox,
 	confusion
 }

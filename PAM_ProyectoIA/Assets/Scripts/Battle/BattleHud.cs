@@ -34,7 +34,8 @@ public class BattleHud : MonoBehaviour
 			{ ConditionID.slp, slpColor },
 			{ ConditionID.par, parColor },
 			{ ConditionID.frz, frzColor },
-			{ ConditionID.rest, slpColor }
+			{ ConditionID.rest, slpColor},
+			{ ConditionID.tox, psnColor}
 		};
 
 		SetStatusText();
