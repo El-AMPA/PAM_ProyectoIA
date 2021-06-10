@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum BattleState { Start, ActionSelection, MoveSelection, RunningTurn, Busy, PartyScreen, AboutToUse, BattleOver }
 public enum BattleAction { Move, SwitchPokemon, UseItem, Run }
@@ -577,14 +578,14 @@ public class BattleSystem : MonoBehaviour
 		if (won)
 		{
 			yield return dialogBox.TypeDialog("¡Has ganado la batalla!");
-			yield return new WaitForSeconds(5f);
-			//Volver al men� o lo que sea
+			yield return new WaitForSeconds(3f);
+			SceneManager.LoadScene("MainMenuScene");
 		}
 		else
 		{
 			yield return dialogBox.TypeDialog("Has perdido la batalla...");
 			yield return new WaitForSeconds(5f);
-			//Volver al menú o lo que sea
+			SceneManager.LoadScene("MainMenuScene");
 		}
 	}
 	IEnumerator ShowDamageDetails(DamageDetails damageDetails)
