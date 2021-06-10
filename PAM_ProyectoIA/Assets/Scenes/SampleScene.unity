@@ -548,6 +548,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerUnit: 1
   hud: {fileID: 342937189}
+--- !u!1 &461450362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 461450364}
+  - component: {fileID: 461450363}
+  m_Layer: 0
+  m_Name: Lorelei
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &461450363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461450362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c4e668b02c9c844c9c579d25e7ea008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pokemon:
+  - _base: {fileID: 11400000, guid: 3f2114b136f852743a0ed47554e7ba98, type: 2}
+    level: 70
+  - _base: {fileID: 11400000, guid: 04c291335b44a4949af16f269f85fa54, type: 2}
+    level: 70
+  nFullHeals: 0
+  nMaxPotions: 0
+--- !u!4 &461450364
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461450362}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -22.69089, y: 9.264896, z: 101.22366}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &511047796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -850,10 +900,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pokemon:
-  - _base: {fileID: 11400000, guid: 346a38c6baa28ae4eb297112c026d43f, type: 2}
-    level: 10
-  - _base: {fileID: 11400000, guid: bc16de8d2e08dc2498dba33caf62a502, type: 2}
-    level: 10
+  - _base: {fileID: 11400000, guid: 122992e452fc18a46b11a73040dc846b, type: 2}
+    level: 50
+  - _base: {fileID: 11400000, guid: f1481d3f7d670e34c91949e7ca833967, type: 2}
+    level: 50
+  - _base: {fileID: 11400000, guid: eec76fa3a807f2f4a83c4b95540bf841, type: 2}
+    level: 50
+  - _base: {fileID: 11400000, guid: 7375bf627a1736b4fa14c84f8d8e5942, type: 2}
+    level: 50
   nFullHeals: 0
   nMaxPotions: 0
 --- !u!4 &683442371
@@ -994,9 +1048,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemon:
   - _base: {fileID: 11400000, guid: 3f2114b136f852743a0ed47554e7ba98, type: 2}
-    level: 10
-  - _base: {fileID: 11400000, guid: 07984c4e8af24f74f95a2660e64774a7, type: 2}
-    level: 10
+    level: 70
+  - _base: {fileID: 11400000, guid: 04c291335b44a4949af16f269f85fa54, type: 2}
+    level: 70
   nFullHeals: 0
   nMaxPotions: 0
 --- !u!4 &774563301
@@ -1445,7 +1499,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7ca6fbd52d0e5db489e973a6f2ac0c68, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6efb6505da7ed5b44b30717578d4da3f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

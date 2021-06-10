@@ -10,20 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7812e6763365bcd48aa0438f416789f3, type: 3}
-  m_Name: SuperSonic
+  m_Name: Dragon Dance
   m_EditorClassIdentifier: 
-  name: Supersonic
+  name: Dragon Dance
   description: 
-  type: 1
+  type: 15
   power: 0
   accuracy: 100
-  alwaysHits: 0
+  alwaysHits: 1
   pp: 20
   priority: 0
   category: 2
   effects:
-    boosts: []
+    boosts:
+    - stat: 4
+      boost: 1
+    - stat: 0
+      boost: 1
     status: 0
-    volatileStatus: 7
-  target: 0
+    volatileStatus: 0
+  target: 1
   secondaries: []
