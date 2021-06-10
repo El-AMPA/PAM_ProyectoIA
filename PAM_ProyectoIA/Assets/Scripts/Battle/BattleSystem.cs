@@ -44,7 +44,10 @@ public class BattleSystem : MonoBehaviour
 		rivalImage.sprite = rival.TrainerSprite;
 
 		enemyAI = rival.TrainerAI;
+	}
 
+	public void StartBattle()
+    {
 		StartCoroutine(SetupBattle());
 	}
 
