@@ -18,7 +18,7 @@ public class PartyMemberUI : MonoBehaviour
 		_pokemon = pokemon;
 
 		nameText.text = pokemon.Base.Name;
-		levelText.text = "Lvl " + pokemon.Level;
+		levelText.text = "Nivel " + pokemon.Level;
 
 		hpBar.SetHP((float)(pokemon.HP / pokemon.MaxHP));
 		UpdateHP();

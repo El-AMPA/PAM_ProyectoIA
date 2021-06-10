@@ -20,36 +20,36 @@ public static Dictionary<ConditionID, Condition> Conditions { get; set; } = new 
 		{ConditionID.psn,
 			new Condition()
 			{
-				Name= "Poison",
-				StartMessage="has been poisoned",
+				Name= "Veneno",
+				StartMessage="ha sido envenenado",
 				OnAfterTurn = (Pokemon pokemon) =>
 				{
 					pokemon.UpdateHP(pokemon.MaxHP / 8);
-					pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} hurt itself due to poison");
+					pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} se ha hecho daño por el veneno.");
 				}
 			} 
 		},
 		{ConditionID.brn,
 			new Condition()
 			{
-				Name= "Burn",
-				StartMessage="has been burned",
+				Name= "Quemadura",
+				StartMessage="se ha quemado",
 				OnAfterTurn = (Pokemon pokemon) =>
 				{
 					pokemon.UpdateHP(pokemon.MaxHP / 16);
-					pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} hurt itself due to burn");
+					pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} se ha hecho daño por la quemadura.");
 				}
 			}
 		},
 		{ConditionID.par,
 			new Condition()
 			{
-				Name= "Paralyzed",
-				StartMessage="has been paralized",
+				Name= "Paralizado",
+				StartMessage="ha sido paralizado",
 				OnBeforeMove = (Pokemon pokemon) =>
 				{
 					if (Random.Range(1, 5) == 1){
-						pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name}'s paralized and can't move");
+						pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} está paralizado y no puede moverse.");
 						return false;
 					}
 
@@ -60,16 +60,16 @@ public static Dictionary<ConditionID, Condition> Conditions { get; set; } = new 
 		{ConditionID.frz,
 			new Condition()
 			{
-				Name= "Freeze",
-					StartMessage="has been frozen",
+				Name= "Congelado",
+					StartMessage="ha sido congelado",
 				OnBeforeMove = (Pokemon pokemon) =>
 				{
 					if (Random.Range(1, 5) == 1){
 						pokemon.CureStatus();
-						pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} is not frozen anymore");
+						pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} ya no está congelado.");
 						return true;
 					}
-					pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name}'s frozen and can't move");
+					pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} está congelado y no puede moverse.");
 					return false;
 				}
 			}
@@ -77,8 +77,8 @@ public static Dictionary<ConditionID, Condition> Conditions { get; set; } = new 
 		{ConditionID.slp,
 			new Condition()
 			{
-				Name= "Sleep",
-				StartMessage="has fallen asleep",
+				Name= "Dormir",
+				StartMessage="se ha dormido",
 				OnStart = (Pokemon pokemon) =>
 				{
 					pokemon.StatusTime = Random.Range(1, 4);
@@ -89,12 +89,12 @@ public static Dictionary<ConditionID, Condition> Conditions { get; set; } = new 
 					if (pokemon.StatusTime <= 0)
 					{
 						pokemon.CureStatus();
-						pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} woke up!");
+						pokemon.StatusChanges.Enqueue($"¡{pokemon.Base.Name} se ha despertado!");
 						return true;
 					}
 
 					pokemon.StatusTime--;
-					pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} is sleeping");
+					pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} está dormido");
 					return false;
 				}
 			}
@@ -102,8 +102,8 @@ public static Dictionary<ConditionID, Condition> Conditions { get; set; } = new 
 		{ConditionID.rest,
 			new Condition()
 			{
-				Name= "Rest",
-				StartMessage="has fallen asleep and healed to full",
+				Name= "Descanso",
+				StartMessage="se ha dormido y se ha curado por completo.",
 				OnStart = (Pokemon pokemon) =>
 				{
 					pokemon.StatusTime = 2;
@@ -115,12 +115,12 @@ public static Dictionary<ConditionID, Condition> Conditions { get; set; } = new 
 					if (pokemon.StatusTime <= 0)
 					{
 						pokemon.CureStatus();
-						pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} woke up!");
+						pokemon.StatusChanges.Enqueue($"¡{pokemon.Base.Name} se ha despertado!");
 						return true;
 					}
 
 					pokemon.StatusTime--;
-					pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} is sleeping");
+					pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} está dormido");
 					return false;
 				}
 			}
@@ -128,8 +128,8 @@ public static Dictionary<ConditionID, Condition> Conditions { get; set; } = new 
 		{ConditionID.tox,
 			new Condition()
 			{
-				Name= "Toxic",
-				StartMessage="has been badly poisoned",
+				Name= "Tóxico",
+				StartMessage="se ha envenenado muy fuerte.",
 				OnStart = (Pokemon pokemon) =>
 				{
 					pokemon.StatusTime = 1;
@@ -137,7 +137,7 @@ public static Dictionary<ConditionID, Condition> Conditions { get; set; } = new 
 				OnAfterTurn = (Pokemon pokemon) =>
 				{
 					pokemon.UpdateHP(Mathf.FloorToInt((pokemon.StatusTime * 6.25f * pokemon.MaxHP) / 100.0f));
-					pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} hurt itself due to toxic poison");
+					pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} se ha hecho daño por el veneno tóxico.");
 					pokemon.StatusTime++;
 				}
 			}
@@ -146,8 +146,8 @@ public static Dictionary<ConditionID, Condition> Conditions { get; set; } = new 
 		{ConditionID.confusion,
 			new Condition()
 			{
-				Name= "Confusion",
-				StartMessage="is now confused",
+				Name= "Confusión",
+				StartMessage="está confuso.",
 				OnStart = (Pokemon pokemon) =>
 				{
 					//Confused for 1-4 turns
@@ -159,18 +159,18 @@ public static Dictionary<ConditionID, Condition> Conditions { get; set; } = new 
 					if (pokemon.VolatileStatusTime <= 0)
 					{
 						pokemon.CureVolatileStatus();
-						pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} isn't confused anymore!");
+						pokemon.StatusChanges.Enqueue($"¡{pokemon.Base.Name} ya no está confuso!");
 						return true;
 					}
 					pokemon.VolatileStatusTime--;
-					pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} is confused!");
+					pokemon.StatusChanges.Enqueue($"¡{pokemon.Base.Name} está confuso!");
 
 					//50% chance of taking damage
 					if(Random.Range(1,3) == 1) return true;
 
 					//Hurt by confusion
 					pokemon.UpdateHP(pokemon.MaxHP/8);
-					pokemon.StatusChanges.Enqueue("It's so confused that it has hurt itself!");
+					pokemon.StatusChanges.Enqueue("¡Está tan confuso que se ha herido a sí mismo!");
 					return false;
 				}
 			}

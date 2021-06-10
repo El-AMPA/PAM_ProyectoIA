@@ -109,11 +109,11 @@ public class Pokemon
 
 			if (boost > 0)
 			{
-				StatusChanges.Enqueue($"{Base.Name}'s {stat} rose!");
+				StatusChanges.Enqueue($"¡La estadística {stat} de {Base.Name} ha aumentado!");
 			}
 			else
 			{
-				StatusChanges.Enqueue($"{Base.Name}'s {stat} fell!");
+				StatusChanges.Enqueue($"¡La estadística {stat} de {Base.Name} ha disminuido!");
 			}
 
 			Debug.Log(stat + "has been bosted to " + StatBoosts[stat]);

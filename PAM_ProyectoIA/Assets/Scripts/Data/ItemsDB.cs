@@ -20,23 +20,23 @@ public class ItemsDB
         {ItemID.fullHeal,
 			new Item()
             {
-				Name= "Full Heal",
-				StartMessage="'s statuses have been healed",
+				Name= "Cura total",
+				StartMessage="ha usado cura total",
 				OnUse = (Pokemon pokemon) =>
                 {
 
 					if (pokemon.Status == null && pokemon.VolatileStatus == null)
                     {
-						pokemon.StatusChanges.Enqueue($"Full heal had no effect on {pokemon.Base.Name}");
+						pokemon.StatusChanges.Enqueue($"La cura total no ha tenido efecto en {pokemon.Base.Name}.");
 					}
 					if (pokemon.Status != null)
                     {
-						pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name}'s {pokemon.Status.ToString()} was healed");
+						pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} se ha recuperado del estado {pokemon.Status.ToString()}");
 						pokemon.CureStatus();
 					}
 					if (pokemon.VolatileStatus != null)
 					{
-						pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name}'s {pokemon.VolatileStatus.ToString()} was healed");
+						pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} se ha recuperado del estado {pokemon.VolatileStatus.ToString()}");
 						pokemon.CureVolatileStatus();
 					}
                 }
@@ -45,18 +45,18 @@ public class ItemsDB
 		{ItemID.maxPotion,
 			new Item()
             {
-				Name= "Max Potion",
-				StartMessage=" has been healed to full",
+				Name= "Poción Máxima",
+				StartMessage="ha usado una poción máxima",
 				OnUse = (Pokemon pokemon) =>
                 {
 					pokemon.HealToFull();
 					if (pokemon.HpChanged)
                     {
-						pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} was healed to full");
+						pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} se ha curado del todo");
                     }
 					else
                     {
-						pokemon.StatusChanges.Enqueue($"Max Potion had no effect on {pokemon.Base.Name}");
+						pokemon.StatusChanges.Enqueue($"La poción máxima no ha tenido efecto en {pokemon.Base.Name}");
 					}
                 }
             }
