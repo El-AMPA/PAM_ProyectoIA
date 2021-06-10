@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Gyarados
   description: 
   frontSprite: {fileID: 21300000, guid: 907c20268d71b2b4d9c528fec0e2ac75, type: 3}
-  backSprite: {fileID: 21300000, guid: 907c20268d71b2b4d9c528fec0e2ac75, type: 3}
+  backSprite: {fileID: 21300000, guid: d8d35e86ba52d2142b2df89c6e3bcfef, type: 3}
   type1: 3
   type2: 10
   maxHP: 95
