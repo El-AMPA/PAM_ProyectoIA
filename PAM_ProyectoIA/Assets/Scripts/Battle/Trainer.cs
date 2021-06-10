@@ -7,6 +7,7 @@ public class Trainer : MonoBehaviour
 {
     [SerializeField] Sprite trainerSprite;
     [SerializeField] string trainerName;
+    [SerializeField] PokemonIA trainerAI;
 
     public Sprite TrainerSprite {
         get { return trainerSprite; }
@@ -15,6 +16,11 @@ public class Trainer : MonoBehaviour
     public string TrainerName
     {
         get { return trainerName; }
+    }
+
+    public PokemonIA TrainerAI
+    {
+        get { return trainerAI; }
     }
 
     public PokemonParty TrainerParty

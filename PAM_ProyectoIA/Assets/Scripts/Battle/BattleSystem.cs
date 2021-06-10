@@ -14,7 +14,6 @@ public class BattleSystem : MonoBehaviour
 	[SerializeField] PartyScreen partyScreen;
 	[SerializeField] Trainer player;
 	[SerializeField] Trainer rival;
-	[SerializeField] PokemonIA enemyIA;
 
 	BattleState state;
 	BattleState? previState;
@@ -29,6 +28,8 @@ public class BattleSystem : MonoBehaviour
 	Image playerImage;
 	Image rivalImage;
 
+	PokemonIA enemyAI;
+
 	private void Start()
 	{
 		playerParty = player.TrainerParty;
@@ -40,6 +41,8 @@ public class BattleSystem : MonoBehaviour
 		rivalImage = gameObject.transform.Find("BattleCanvas").transform.Find("RivalImage").GetComponent<Image>();
 		playerImage.sprite = player.TrainerSprite;
 		rivalImage.sprite = rival.TrainerSprite;
+
+		enemyAI = rival.TrainerAI;
 
 		StartCoroutine(SetupBattle());
 	}
@@ -75,7 +78,7 @@ public class BattleSystem : MonoBehaviour
 
 		partyScreen.Init();
 
-		enemyIA.Init(enemyParty, playerParty, enemyUnit, playerUnit);
+		enemyAI.Init(rivalParty, playerParty, enemyUnit, playerUnit);
 
 		ActionSelection();
 	}
@@ -322,12 +325,12 @@ public class BattleSystem : MonoBehaviour
 		state = BattleState.RunningTurn;
 
 		playerUnit.Pokemon.CurrentMove = playerUnit.Pokemon.Moves[currentMove];
-		enemyUnit.Pokemon.CurrentMove = enemyIA.decideNextMove();
+		enemyUnit.Pokemon.CurrentMove = enemyAI.decideNextMove();
 
 		bool enemyCanMove = true;
 		bool playerCanMove = true;
 
-		var enemySwitch = enemyIA.decideSwitch();
+		var enemySwitch = enemyAI.decideSwitch();
 		if (enemySwitch != null)
 		{
 			state = BattleState.Busy;
@@ -345,11 +348,11 @@ public class BattleSystem : MonoBehaviour
 
 		if (enemyCanMove)
 		{
-			ItemID item = enemyIA.decideItemUse();
+			ItemID item = enemyAI.decideItemUse();
 			if (item != ItemID.NULL)
 			{ //Null implica que no quiere usar un objeto.
 				ItemsDB.Items[item].OnUse.Invoke(enemyUnit.Pokemon); //Se aplica el objeto.
-				enemyParty.consumeItem(item);
+				rivalParty.consumeItem(item);
 
 				yield return ShowStatusChanges(enemyUnit.Pokemon);
 				yield return enemyUnit.Hud.UpdateHP();
@@ -603,7 +606,7 @@ public class BattleSystem : MonoBehaviour
 	{
 		state = BattleState.Busy;
 
-		var nextPokemon = enemyIA.decideNextPokemon();
+		var nextPokemon = enemyAI.decideNextPokemon();
 		enemyUnit.Setup(nextPokemon);
 		yield return dialogBox.TypeDialog($"{rival.TrainerName} sends out {nextPokemon.Base.Name}");
 

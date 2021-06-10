@@ -172,8 +172,8 @@ MonoBehaviour:
   enemyUnit: {fileID: 61377924}
   dialogBox: {fileID: 1805846082}
   partyScreen: {fileID: 1807563950}
-  player: {fileID: 1044364022}
-  rival: {fileID: 2035761341}
+  player: {fileID: 683442372}
+  rival: {fileID: 461450365}
 --- !u!224 &45581793 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6733100518726128875, guid: ffe8c5bd7f9ab1643b3216ccd73b8b4e, type: 3}
@@ -440,6 +440,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175332449}
   m_CullTransparentMesh: 1
+--- !u!1 &236864535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 236864537}
+  - component: {fileID: 236864536}
+  m_Layer: 0
+  m_Name: IA_Tontisima
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &236864536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236864535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b75aadbe95e2a49928946cc49d971c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &236864537
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236864535}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -22.69089, y: 9.264896, z: 101.22366}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &342937186 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6733100518726128875, guid: ffe8c5bd7f9ab1643b3216ccd73b8b4e, type: 3}
@@ -611,6 +654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trainerSprite: {fileID: 21300000, guid: 6efb6505da7ed5b44b30717578d4da3f, type: 3}
   trainerName: Lorelei
+  trainerAI: {fileID: 1314171790}
 --- !u!1001 &511047796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -952,6 +996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trainerSprite: {fileID: 21300000, guid: 7fd17ad66df229e4eb72873b73220118, type: 3}
   trainerName: Player
+  trainerAI: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,6 +1155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trainerSprite: {fileID: 21300000, guid: 6efb6505da7ed5b44b30717578d4da3f, type: 3}
   trainerName: "Eva Ull\xE1n"
+  trainerAI: {fileID: 236864536}
 --- !u!1 &901973285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,6 +1296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trainerSprite: {fileID: 21300000, guid: d82cd9d94ea9df94fa2a9a603279f99d, type: 3}
   trainerName: Jorge con el perro
+  trainerAI: {fileID: 236864536}
 --- !u!1001 &933879572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1496,6 +1543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trainerSprite: {fileID: 21300000, guid: 7fd17ad66df229e4eb72873b73220118, type: 3}
   trainerName: Player vs PriorityBoss
+  trainerAI: {fileID: 0}
 --- !u!4 &1044364023
 Transform:
   m_ObjectHideFlags: 0
@@ -1629,6 +1677,49 @@ Transform:
   m_Children: []
   m_Father: {fileID: 30512888}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1314171789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1314171791}
+  - component: {fileID: 1314171790}
+  m_Layer: 0
+  m_Name: IA_Lorelei
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1314171790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314171789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28acecd75173f954c98108ff61ec3c1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1314171791
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314171789}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -22.69089, y: 9.264896, z: 101.22366}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1323802991
 GameObject:
@@ -2381,6 +2472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trainerSprite: {fileID: 21300000, guid: 7fd17ad66df229e4eb72873b73220118, type: 3}
   trainerName: Player vs Jorge
+  trainerAI: {fileID: 0}
 --- !u!1 &1606447653
 GameObject:
   m_ObjectHideFlags: 0
@@ -3173,6 +3265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trainerSprite: {fileID: 21300000, guid: fb0577beb4d0fd54889e124d8d81e51b, type: 3}
   trainerName: Ninja Joserra
+  trainerAI: {fileID: 236864536}
 --- !u!4 &2035761342
 Transform:
   m_ObjectHideFlags: 0
