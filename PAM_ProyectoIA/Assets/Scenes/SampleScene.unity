@@ -172,8 +172,8 @@ MonoBehaviour:
   enemyUnit: {fileID: 61377924}
   dialogBox: {fileID: 1805846082}
   partyScreen: {fileID: 1807563950}
-  player: {fileID: 683442372}
-  rival: {fileID: 461450365}
+  player: {fileID: 988513457}
+  rival: {fileID: 1396104405}
 --- !u!224 &45581793 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6733100518726128875, guid: ffe8c5bd7f9ab1643b3216ccd73b8b4e, type: 3}
@@ -481,7 +481,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &342937186 stripped
 RectTransform:
@@ -638,7 +638,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &461450365
 MonoBehaviour:
@@ -1280,7 +1280,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &914036524
 MonoBehaviour:
@@ -1494,6 +1494,76 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &988513455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 988513458}
+  - component: {fileID: 988513457}
+  - component: {fileID: 988513456}
+  m_Layer: 0
+  m_Name: Player vs Blaine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &988513456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988513455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c4e668b02c9c844c9c579d25e7ea008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pokemon:
+  - _base: {fileID: 11400000, guid: 7375bf627a1736b4fa14c84f8d8e5942, type: 2}
+    level: 42
+  - _base: {fileID: 11400000, guid: 779401d720e481e439f5d3a7b3c1d33d, type: 2}
+    level: 43
+  - _base: {fileID: 11400000, guid: 56312f44674f05a4baf63d1005db4ee7, type: 2}
+    level: 45
+  - _base: {fileID: 11400000, guid: 626c31e0b78a6454180e44097fcd411b, type: 2}
+    level: 46
+  nFullHeals: 0
+  nMaxPotions: 0
+--- !u!114 &988513457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988513455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51a5e05765c1b846b6a9abb3e299c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trainerSprite: {fileID: 21300000, guid: 7fd17ad66df229e4eb72873b73220118, type: 3}
+  trainerName: Player
+  trainerAI: {fileID: 0}
+--- !u!4 &988513458
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988513455}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -22.69089, y: 9.264896, z: 101.22366}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1044364020
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,7 +1626,50 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1155137468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1155137470}
+  - component: {fileID: 1155137469}
+  m_Layer: 0
+  m_Name: IA_Blaine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1155137469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155137468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f665551572e716543a34985240d721de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1155137470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155137468}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -22.69089, y: 9.264896, z: 101.22366}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1264944140
 GameObject:
@@ -1678,6 +1791,76 @@ Transform:
   m_Father: {fileID: 30512888}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1294586064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1294586067}
+  - component: {fileID: 1294586066}
+  - component: {fileID: 1294586065}
+  m_Layer: 0
+  m_Name: Player vs Lorelei
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1294586065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294586064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c4e668b02c9c844c9c579d25e7ea008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pokemon:
+  - _base: {fileID: 11400000, guid: 122992e452fc18a46b11a73040dc846b, type: 2}
+    level: 50
+  - _base: {fileID: 11400000, guid: f1481d3f7d670e34c91949e7ca833967, type: 2}
+    level: 50
+  - _base: {fileID: 11400000, guid: eec76fa3a807f2f4a83c4b95540bf841, type: 2}
+    level: 50
+  - _base: {fileID: 11400000, guid: 7375bf627a1736b4fa14c84f8d8e5942, type: 2}
+    level: 50
+  nFullHeals: 0
+  nMaxPotions: 0
+--- !u!114 &1294586066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294586064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51a5e05765c1b846b6a9abb3e299c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trainerSprite: {fileID: 21300000, guid: 7fd17ad66df229e4eb72873b73220118, type: 3}
+  trainerName: Player
+  trainerAI: {fileID: 0}
+--- !u!4 &1294586067
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294586064}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -22.69089, y: 9.264896, z: 101.22366}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1314171789
 GameObject:
   m_ObjectHideFlags: 0
@@ -1719,7 +1902,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1323802991
 GameObject:
@@ -1904,6 +2087,76 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1396104403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1396104406}
+  - component: {fileID: 1396104405}
+  - component: {fileID: 1396104404}
+  m_Layer: 0
+  m_Name: Blaine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1396104404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396104403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c4e668b02c9c844c9c579d25e7ea008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pokemon:
+  - _base: {fileID: 11400000, guid: b9196d559ec6d05468eba1d9f48f0e5e, type: 2}
+    level: 42
+  - _base: {fileID: 11400000, guid: 088972bbed0710f47aabb43f85d32de8, type: 2}
+    level: 40
+  - _base: {fileID: 11400000, guid: f8a43d47e4cda954290a7b018363ecfb, type: 2}
+    level: 42
+  - _base: {fileID: 11400000, guid: 2727dfe8c771c47458a097b3c5363afa, type: 2}
+    level: 47
+  nFullHeals: 0
+  nMaxPotions: 3
+--- !u!114 &1396104405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396104403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51a5e05765c1b846b6a9abb3e299c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trainerSprite: {fileID: 21300000, guid: 2547e326d87d42a449249be7076764fc, type: 3}
+  trainerName: Blaine
+  trainerAI: {fileID: 1155137469}
+--- !u!4 &1396104406
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396104403}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -22.69089, y: 9.264896, z: 101.22366}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1408954579
 GameObject:
   m_ObjectHideFlags: 0
@@ -2456,7 +2709,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1583368856
 MonoBehaviour:
@@ -3278,7 +3531,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2040940802
 GameObject:
