@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7812e6763365bcd48aa0438f416789f3, type: 3}
-  m_Name: Thunderbolt
+  m_Name: Fire Punch
   m_EditorClassIdentifier: 
-  name: Thunderbolt
-  description: 10% chance of paralyzing the opponent
-  type: 4
-  power: 90
+  name: Fire Punch
+  description: 
+  type: 2
+  power: 75
   accuracy: 100
   alwaysHits: 0
   pp: 15
   priority: 0
-  category: 1
+  category: 0
   effects:
     boosts: []
     status: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
   target: 0
   secondaries:
   - boosts: []
-    status: 4
+    status: 2
     volatileStatus: 0
     chance: 10
     target: 0

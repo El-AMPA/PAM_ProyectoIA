@@ -1144,6 +1144,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 901973285}
   m_CullTransparentMesh: 1
+--- !u!1 &914036521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 914036523}
+  - component: {fileID: 914036522}
+  m_Layer: 0
+  m_Name: Jorge con el Perro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &914036522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914036521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c4e668b02c9c844c9c579d25e7ea008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pokemon:
+  - _base: {fileID: 11400000, guid: 4bff74050dfeac64990b51fca6ef019a, type: 2}
+    level: 75
+  nFullHeals: 0
+  nMaxPotions: 0
+--- !u!4 &914036523
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914036521}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -22.69089, y: 9.264896, z: 101.22366}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &933879572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2143,6 +2191,60 @@ RectTransform:
   m_AnchoredPosition: {x: -0.000044823, y: 41}
   m_SizeDelta: {x: 701.76, y: 58.79}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1583368853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1583368855}
+  - component: {fileID: 1583368854}
+  m_Layer: 0
+  m_Name: Player vs Jorge con el Perro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1583368854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583368853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c4e668b02c9c844c9c579d25e7ea008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pokemon:
+  - _base: {fileID: 11400000, guid: 1647c00be4f540f43b237c1911c5015d, type: 2}
+    level: 35
+  - _base: {fileID: 11400000, guid: f1481d3f7d670e34c91949e7ca833967, type: 2}
+    level: 50
+  - _base: {fileID: 11400000, guid: 779401d720e481e439f5d3a7b3c1d33d, type: 2}
+    level: 25
+  - _base: {fileID: 11400000, guid: d66a17a0535ab1740a6457cbc9f9a7a0, type: 2}
+    level: 25
+  nFullHeals: 0
+  nMaxPotions: 0
+--- !u!4 &1583368855
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583368853}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -22.69089, y: 9.264896, z: 101.22366}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1606447653
 GameObject:
   m_ObjectHideFlags: 0
