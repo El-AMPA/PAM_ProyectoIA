@@ -66,5 +66,5 @@ public class ItemsDB
 
 public enum ItemID
 {
-	fullHeal, maxPotion
+	NULL, fullHeal, maxPotion
 }
