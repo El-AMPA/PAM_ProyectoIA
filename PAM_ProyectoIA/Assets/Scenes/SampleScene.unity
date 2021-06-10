@@ -993,12 +993,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pokemon:
-  - _base: {fileID: 11400000, guid: 07984c4e8af24f74f95a2660e64774a7, type: 2}
-    level: 10
   - _base: {fileID: 11400000, guid: 3f2114b136f852743a0ed47554e7ba98, type: 2}
     level: 10
+  - _base: {fileID: 11400000, guid: 07984c4e8af24f74f95a2660e64774a7, type: 2}
+    level: 10
   nFullHeals: 0
-  nMaxPotions: 3
+  nMaxPotions: 0
 --- !u!4 &774563301
 Transform:
   m_ObjectHideFlags: 0

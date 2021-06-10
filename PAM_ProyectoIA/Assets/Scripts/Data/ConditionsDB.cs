@@ -99,6 +99,32 @@ public static Dictionary<ConditionID, Condition> Conditions { get; set; } = new 
 				}
 			}
 		},
+		{ConditionID.rest,
+			new Condition()
+			{
+				Name= "Rest",
+				StartMessage="has fallen asleep and healed to full",
+				OnStart = (Pokemon pokemon) =>
+				{
+					pokemon.StatusTime = 2;
+					pokemon.HealToFull();
+					Debug.Log($"Will be asleep for {pokemon.StatusTime} moves");
+				},
+				OnBeforeMove = (Pokemon pokemon) =>
+				{
+					if (pokemon.StatusTime <= 0)
+					{
+						pokemon.CureStatus();
+						pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} woke up!");
+						return true;
+					}
+
+					pokemon.StatusTime--;
+					pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} is sleeping");
+					return false;
+				}
+			}
+		},
 		//Volatile Status Conditions
 		{ConditionID.confusion,
 			new Condition()
@@ -131,12 +157,12 @@ public static Dictionary<ConditionID, Condition> Conditions { get; set; } = new 
 					return false;
 				}
 			}
-		}
+		},
 	};
 
 }
 public enum ConditionID
 {
-	none, psn, brn, slp, par, frz,
+	none, psn, brn, slp, par, frz, rest,
 	confusion
 }

@@ -15,15 +15,15 @@ MonoBehaviour:
   name: Rest
   description: "The pok\xE9mon falls asleep and recovers full hp"
   type: 11
-  power: 0
+  power: 20
   accuracy: 100
   alwaysHits: 0
-  pp: 10
+  pp: 20
   priority: 0
   category: 2
   effects:
     boosts: []
-    status: 0
+    status: 6
     volatileStatus: 0
-  target: 0
+  target: 1
   secondaries: []

@@ -429,7 +429,9 @@ public class BattleSystem : MonoBehaviour
 
 			if (move.Base.Category == MoveCategory.Status)
 			{
+				if (move.Base.Name == "Rest") { sourceUnit.Pokemon.CureStatus(); sourceUnit.Pokemon.CureVolatileStatus(); }
 				yield return RunMoveEffects(move.Base.Effects, sourceUnit.Pokemon, targetUnit.Pokemon, move.Base.Target);
+				if (move.Base.Name =="Rest") yield return targetUnit.Hud.UpdateHP();
 			}
 			else
 			{
@@ -501,13 +503,16 @@ public class BattleSystem : MonoBehaviour
 		//Condiciones de estado
 		if(effects.Status != ConditionID.none)
 		{
-			target.SetStatus(effects.Status);
+			if (moveTarget == MoveTarget.Self) source.SetStatus(effects.Status);
+			else target.SetStatus(effects.Status);
 		}
 
 		//Condiciones de estado volátiles
 		if (effects.VolatileStatus != ConditionID.none)
 		{
-			target.SetVolatileStatus(effects.VolatileStatus);
+			if (moveTarget == MoveTarget.Self) source.SetVolatileStatus(effects.VolatileStatus);
+			else target.SetVolatileStatus(effects.VolatileStatus);
+
 		}
 
 		yield return ShowStatusChanges(source);
