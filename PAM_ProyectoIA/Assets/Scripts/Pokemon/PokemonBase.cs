@@ -94,24 +94,24 @@ public class PokemonBase : ScriptableObject
 
 public enum PokemonType
 {
-	None,
+	Ninguno,
 	Normal,
-	Fire,
-	Water,
-	Electric,
-	Grass,
-	Ice,
-	Fighting,
-	Posion,
-	Ground,
-	Flying,
-	Psychic,
-	Bug,
-	Rock,
-	Ghost,
+	Fuego,
+	Agua,
+	Electrico,
+	Planta,
+	Hielo,
+	Lucha,
+	Veneno,
+	Tierra,
+	Volador,
+	Psiquico,
+	Bicho,
+	Roca,
+	Fantasma,
 	Dragon,
-	Dark,
-	Steel
+	Siniestro,
+	Acero
 }
 
 public enum Stat
@@ -151,7 +151,7 @@ public class TypeChart
 
 	public static float GetEffectiveness(PokemonType attackType, PokemonType defenseType)
 	{
-		if (attackType == PokemonType.None || defenseType == PokemonType.None)
+		if (attackType == PokemonType.Ninguno || defenseType == PokemonType.Ninguno)
 			return 1;
 
 		int row = (int)attackType - 1;

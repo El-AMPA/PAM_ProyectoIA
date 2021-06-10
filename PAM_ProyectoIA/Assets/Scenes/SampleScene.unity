@@ -331,7 +331,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: TYPE
+  m_Text: TIPO
 --- !u!222 &129304401
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -918,7 +918,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bag
+  m_Text: Bolsa
 --- !u!222 &643564554
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3146,7 +3146,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Yes
+  m_Text: "S\xED"
 --- !u!222 &1819075412
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3225,7 +3225,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Fight
+  m_Text: 'Luchar
 
 '
 --- !u!222 &1883289754
@@ -3306,7 +3306,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Run
+  m_Text: Huir
 --- !u!222 &1900723579
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3385,7 +3385,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pokemon
+  m_Text: "Pok\xE9mon"
 --- !u!222 &1961550974
 CanvasRenderer:
   m_ObjectHideFlags: 0
