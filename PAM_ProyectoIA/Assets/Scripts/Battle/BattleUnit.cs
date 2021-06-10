@@ -6,10 +6,11 @@ using DG.Tweening;
 
 public class BattleUnit : MonoBehaviour
 {
-	PokemonBase _base;
 	int level;
 	[SerializeField] bool isPlayerUnit;
 	[SerializeField] BattleHud hud;
+
+	private AudioSource cryPlayer;
 
 	public BattleHud Hud
 	{
@@ -37,7 +38,7 @@ public class BattleUnit : MonoBehaviour
 	public void Setup(Pokemon pokemon)
 	{
 		Pokemon = pokemon;
-		if (isPlayerUnit) 
+		if (isPlayerUnit)
 			image.sprite = Pokemon.Base.BackSprite;
 		else 
 			image.sprite = Pokemon.Base.FrontSprite;
@@ -46,6 +47,8 @@ public class BattleUnit : MonoBehaviour
 		hud.SetData(pokemon);
 
 		image.color = originalColor;
+
+		cryPlayer = gameObject.GetComponent<AudioSource>();
 		PlayerEnterAnimation();
 	}
 
@@ -56,6 +59,9 @@ public class BattleUnit : MonoBehaviour
 
 	public void PlayerEnterAnimation()
 	{
+		cryPlayer.clip = Pokemon.Base.Cry;
+		cryPlayer.Play();
+
 		if (isPlayerUnit)
 			image.transform.localPosition = new Vector3(-500f, originalPos.y);
 		else
@@ -84,6 +90,9 @@ public class BattleUnit : MonoBehaviour
 
 	public void PlayFaintAnimation()
 	{
+		cryPlayer.clip = Pokemon.Base.Cry;
+		cryPlayer.Play();
+
 		var sequence = DOTween.Sequence();
 		sequence.Append(image.transform.DOLocalMoveY(originalPos.y - 150f, 0.5f));
 		sequence.Join(image.DOFade(0f, 0.5f));

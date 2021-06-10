@@ -16,6 +16,7 @@ MonoBehaviour:
   description: Lucha puro
   frontSprite: {fileID: 21300000, guid: 6a5d8deb94e985446b8849877aae93ef, type: 3}
   backSprite: {fileID: 21300000, guid: 7a267aa6c7ea16a45a0dfa477fd889f9, type: 3}
+  cry: {fileID: 8300000, guid: 008edb69b9e154e469475d0749772aca, type: 3}
   type1: 7
   type2: 0
   maxHP: 90

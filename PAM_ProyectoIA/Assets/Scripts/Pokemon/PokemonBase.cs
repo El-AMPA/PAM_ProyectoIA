@@ -13,6 +13,7 @@ public class PokemonBase : ScriptableObject
 
 	[SerializeField] Sprite frontSprite;
 	[SerializeField] Sprite backSprite;
+	[SerializeField] AudioClip cry;
 
 	[SerializeField] PokemonType type1;
 	[SerializeField] PokemonType type2;
@@ -24,7 +25,6 @@ public class PokemonBase : ScriptableObject
 	[SerializeField] int spDefense;
 	[SerializeField] int speed;
 
-	//Needs to be reworked
 	[SerializeField] List<MoveBase> knownMoves;
 
 	public string Name
@@ -46,6 +46,11 @@ public class PokemonBase : ScriptableObject
 	{
 		get { return backSprite; }
 	}
+
+	public AudioClip Cry
+    {
+		get { return cry; }
+    }
 	public PokemonType Type1
 	{
 		get { return type1; }

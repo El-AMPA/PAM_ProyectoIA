@@ -16,6 +16,7 @@ MonoBehaviour:
   description: "The only Pok\xE9mon in existence"
   frontSprite: {fileID: 21300000, guid: 4ceb2b602251fa34db35024eb00d8891, type: 3}
   backSprite: {fileID: 21300000, guid: f60dc8889c73431488fa715631022676, type: 3}
+  cry: {fileID: 8300000, guid: 4d7849f29480ea545a4d8d9e6eedfe05, type: 3}
   type1: 4
   type2: 0
   maxHP: 35

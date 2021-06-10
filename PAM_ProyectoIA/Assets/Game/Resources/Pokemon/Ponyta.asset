@@ -16,6 +16,7 @@ MonoBehaviour:
   description: 
   frontSprite: {fileID: 21300000, guid: 031e74a3f84141d4e8b7b534c82eeb25, type: 3}
   backSprite: {fileID: 21300000, guid: 0a922334c48d5f84a8a145f49a90205c, type: 3}
+  cry: {fileID: 8300000, guid: 2592787b458636447809d980fe4a7d15, type: 3}
   type1: 2
   type2: 0
   maxHP: 50
