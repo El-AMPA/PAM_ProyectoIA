@@ -172,10 +172,8 @@ MonoBehaviour:
   enemyUnit: {fileID: 61377924}
   dialogBox: {fileID: 1805846082}
   partyScreen: {fileID: 1807563950}
-  playerParty: {fileID: 683442370}
-  enemyParty: {fileID: 774563300}
-  playerImage: {fileID: 1977036501}
-  trainerImage: {fileID: 1323802992}
+  player: {fileID: 1583368856}
+  rival: {fileID: 914036524}
 --- !u!224 &45581793 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6733100518726128875, guid: ffe8c5bd7f9ab1643b3216ccd73b8b4e, type: 3}
@@ -557,6 +555,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 461450364}
+  - component: {fileID: 461450365}
   - component: {fileID: 461450363}
   m_Layer: 0
   m_Name: Lorelei
@@ -598,6 +597,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &461450365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461450362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51a5e05765c1b846b6a9abb3e299c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trainerSprite: {fileID: 21300000, guid: 6efb6505da7ed5b44b30717578d4da3f, type: 3}
+  trainerName: Lorelei
 --- !u!1001 &511047796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -879,6 +892,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 683442371}
+  - component: {fileID: 683442372}
   - component: {fileID: 683442370}
   m_Layer: 0
   m_Name: Player
@@ -924,6 +938,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &683442372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683442369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51a5e05765c1b846b6a9abb3e299c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trainerSprite: {fileID: 21300000, guid: 7fd17ad66df229e4eb72873b73220118, type: 3}
+  trainerName: Player
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,6 +1054,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 774563301}
+  - component: {fileID: 774563302}
   - component: {fileID: 774563300}
   m_Layer: 0
   m_Name: Rival
@@ -1067,6 +1096,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &774563302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774563299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51a5e05765c1b846b6a9abb3e299c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trainerSprite: {fileID: 21300000, guid: 6efb6505da7ed5b44b30717578d4da3f, type: 3}
+  trainerName: "Eva Ull\xE1n"
 --- !u!1 &901973285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,6 +1196,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 914036523}
+  - component: {fileID: 914036524}
   - component: {fileID: 914036522}
   m_Layer: 0
   m_Name: Jorge con el Perro
@@ -1192,6 +1236,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &914036524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914036521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51a5e05765c1b846b6a9abb3e299c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trainerSprite: {fileID: 21300000, guid: d82cd9d94ea9df94fa2a9a603279f99d, type: 3}
+  trainerName: Jorge con el perro
 --- !u!1001 &933879572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1521,7 +1579,7 @@ GameObject:
   - component: {fileID: 1323802993}
   - component: {fileID: 1323802992}
   m_Layer: 0
-  m_Name: Trainer Character
+  m_Name: RivalImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1547,7 +1605,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6efb6505da7ed5b44b30717578d4da3f, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2200,6 +2258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1583368855}
+  - component: {fileID: 1583368856}
   - component: {fileID: 1583368854}
   m_Layer: 0
   m_Name: Player vs Jorge con el Perro
@@ -2245,6 +2304,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1583368856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583368853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51a5e05765c1b846b6a9abb3e299c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trainerSprite: {fileID: 21300000, guid: 7fd17ad66df229e4eb72873b73220118, type: 3}
+  trainerName: Player vs Jorge
 --- !u!1 &1606447653
 GameObject:
   m_ObjectHideFlags: 0
@@ -2925,7 +2998,7 @@ GameObject:
   - component: {fileID: 1977036500}
   - component: {fileID: 1977036501}
   m_Layer: 0
-  m_Name: Player Character
+  m_Name: PlayerImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2978,7 +3051,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7fd17ad66df229e4eb72873b73220118, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

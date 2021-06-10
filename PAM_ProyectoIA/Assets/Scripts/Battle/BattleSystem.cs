@@ -12,10 +12,8 @@ public class BattleSystem : MonoBehaviour
 	[SerializeField] BattleUnit enemyUnit;
 	[SerializeField] BattleDialogBox dialogBox;
 	[SerializeField] PartyScreen partyScreen;
-	[SerializeField] PokemonParty playerParty;
-	[SerializeField] PokemonParty enemyParty;
-	[SerializeField] Image playerImage;
-	[SerializeField] Image trainerImage;
+	[SerializeField] Trainer player;
+	[SerializeField] Trainer rival;
 
 	BattleState state;
 	BattleState? previState;
@@ -24,10 +22,24 @@ public class BattleSystem : MonoBehaviour
 	int currentMember;
 	bool aboutToUseChoice = true;
 
+	PokemonParty playerParty;
+	PokemonParty rivalParty;
+
+	Image playerImage;
+	Image rivalImage;
+
 	private void Start()
 	{
+		playerParty = player.TrainerParty;
+		rivalParty = rival.TrainerParty;
 		ConditionsDB.Init();
 		ItemsDB.Init();
+
+		playerImage = gameObject.transform.Find("BattleCanvas").transform.Find("PlayerImage").GetComponent<Image>();
+		rivalImage = gameObject.transform.Find("BattleCanvas").transform.Find("RivalImage").GetComponent<Image>();
+		playerImage.sprite = player.TrainerSprite;
+		rivalImage.sprite = rival.TrainerSprite;
+
 		StartCoroutine(SetupBattle());
 	}
 
@@ -37,21 +49,20 @@ public class BattleSystem : MonoBehaviour
 		enemyUnit.Clear();
 
 		playerParty.Init();
-		enemyParty.Init();
+		rivalParty.Init();
 
 		playerUnit.gameObject.SetActive(false);
 		enemyUnit.gameObject.SetActive(false);
 
 		playerImage.gameObject.SetActive(true);
-		trainerImage.gameObject.SetActive(true);
+		rivalImage.gameObject.SetActive(true);
+		yield return dialogBox.TypeDialog($"{rival.TrainerName} wants to battle!");
 
-		yield return dialogBox.TypeDialog($"Trainer Pederico wants to battle!");
-
-		trainerImage.gameObject.SetActive(false);
+		rivalImage.gameObject.SetActive(false);
 		enemyUnit.gameObject.SetActive(true);
-		var enemyPokemon = enemyParty.GetHealthyPokemon();
+		var enemyPokemon = rivalParty.GetHealthyPokemon();
 		enemyUnit.Setup(enemyPokemon);
-		yield return dialogBox.TypeDialog($"He sends out {enemyPokemon.Base.Name}!");
+		yield return dialogBox.TypeDialog($"{rival.TrainerName} sends out {enemyPokemon.Base.Name}!");
 
 		playerImage.gameObject.SetActive(false);
 		playerUnit.gameObject.SetActive(true);
@@ -89,7 +100,7 @@ public class BattleSystem : MonoBehaviour
 	IEnumerator AboutToUse(Pokemon newPokemon)
     {
 		state = BattleState.Busy;
-		yield return dialogBox.TypeDialog($"Pederico is about to use {newPokemon.Base.name}. Do you want to switch?");
+		yield return dialogBox.TypeDialog($"{rival.TrainerName} is about to use {newPokemon.Base.name}. Do you want to switch?");
 
 		state = BattleState.AboutToUse;
 		dialogBox.EnableChoiceBox(true);
@@ -329,18 +340,18 @@ public class BattleSystem : MonoBehaviour
 			 */
 
 			//Totalmente temporal. Mirad lo de arriba.
-			if (enemyParty.NFullHeals > 0)
+			if (rivalParty.NFullHeals > 0)
             {
 				Debug.Log("Quiero usar un Full Heal");
 				ItemsDB.Items[ItemID.fullHeal].OnUse.Invoke(enemyUnit.Pokemon);
-				enemyParty.consumeItem(ItemID.fullHeal);
+				rivalParty.consumeItem(ItemID.fullHeal);
 				itemUsed = true;
 			}
-			else if (enemyParty.NMaxPotions > 0)
+			else if (rivalParty.NMaxPotions > 0)
             {
 				Debug.Log("Quiero usar una Max Potion");
 				ItemsDB.Items[ItemID.maxPotion].OnUse.Invoke(enemyUnit.Pokemon);
-				enemyParty.consumeItem(ItemID.maxPotion);
+				rivalParty.consumeItem(ItemID.maxPotion);
 				itemUsed = true;
             }
 
@@ -567,7 +578,7 @@ public class BattleSystem : MonoBehaviour
 		}
 		else
 		{
-			var nextPokemon = enemyParty.GetHealthyPokemon();
+			var nextPokemon = rivalParty.GetHealthyPokemon();
 			if (nextPokemon != null)
 			{
 				StartCoroutine(AboutToUse(nextPokemon));
@@ -610,9 +621,9 @@ public class BattleSystem : MonoBehaviour
     {
 		state = BattleState.Busy;
 
-		var nextPokemon = enemyParty.GetHealthyPokemon();
+		var nextPokemon = rivalParty.GetHealthyPokemon();
 		enemyUnit.Setup(nextPokemon);
-		yield return dialogBox.TypeDialog($"Pederico sends out {nextPokemon.Base.Name}");
+		yield return dialogBox.TypeDialog($"{rival.TrainerName} sends out {nextPokemon.Base.Name}");
 
 		state = BattleState.RunningTurn;
     }
