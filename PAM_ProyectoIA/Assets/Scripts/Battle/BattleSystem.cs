@@ -172,6 +172,7 @@ public class BattleSystem : MonoBehaviour
 			else if (currentAction == 3)
 			{
 				//Run
+				SceneManager.LoadScene("MainMenu");
 			}
 		}
 	}
