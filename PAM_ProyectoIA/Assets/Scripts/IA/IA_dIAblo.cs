@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class IA_dIAblo : PokemonIA
@@ -15,6 +16,8 @@ public class IA_dIAblo : PokemonIA
 	[SerializeField] int pointsOnDefInmunity = 3;
 	[SerializeField] int pointsOnDefAdvantage = 1;
 	[SerializeField] int pointsOnDefDisadvantage = -1;
+	[SerializeField] int maxStatDrops = 2;
+	[SerializeField] int maxStatBoosts = 4;
 
 	Pokemon lastSwitch;
 	int switchCounter;
@@ -80,8 +83,21 @@ public class IA_dIAblo : PokemonIA
 					}
 					else if (move.Base.Effects.Boosts.Count > 0)
                     {
-						statusMoves.Add(move);
-                    }
+						if(move.Base.Effects.Boosts.Where(x => x.boost < 0).Count() > 0) //si es un movimiento de estado que baja estadísticas del oponente
+                        {
+							int statDrops = 0;
+							foreach (int drop in opposingUnit.Pokemon.StatBoosts.Values)
+								if (drop < 0) statDrops -= drop;
+							if (statDrops < maxStatDrops) statusMoves.Add(move); //lo añadimos solo si el oponente no tiene ya las estadísticas muy bajas
+                        }
+                        else //si no, es que es un movimiento que sube nuestras propias estadísticas
+                        {
+							int statBoosts = 0;
+							foreach (int boost in myUnit.Pokemon.StatBoosts.Values)
+								if (boost > 0) statBoosts += boost;
+							if(statBoosts < maxStatBoosts) statusMoves.Add(move); //lo añadimos solo si no tenemos ya las estadísticas muy altas
+						}
+					}
                 }
 
 				else if (myUnit.Pokemon.HP <= defensiveThreshold * myUnit.Pokemon.MaxHP)

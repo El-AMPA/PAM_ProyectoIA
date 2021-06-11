@@ -22,6 +22,7 @@ public class BattleSystem : MonoBehaviour
 	int currentMove;
 	int currentMember;
 	bool aboutToUseChoice = true;
+	Pokemon aboutToUsePokemon = null;
 
 	PokemonParty playerParty;
 	PokemonParty rivalParty;
@@ -579,6 +580,7 @@ public class BattleSystem : MonoBehaviour
 			var nextPokemon = enemyAI.decideNextPokemon();
 			if (nextPokemon != null)
 			{
+				aboutToUsePokemon = nextPokemon;
 				StartCoroutine(AboutToUse(nextPokemon));
 			}
 			else
@@ -620,7 +622,7 @@ public class BattleSystem : MonoBehaviour
 	{
 		state = BattleState.Busy;
 
-		var nextPokemon = enemyAI.decideNextPokemon();
+		var nextPokemon = aboutToUsePokemon;
 		enemyUnit.Setup(nextPokemon);
 		yield return dialogBox.TypeDialog($"{rival.TrainerName} saca a {nextPokemon.Base.Name}");
 
