@@ -31,6 +31,8 @@ public class BattleSystem : MonoBehaviour
 
 	PokemonIA enemyAI;
 
+	AudioSource forbiddenSound;
+
 	private void Start()
 	{
 		playerParty = player.TrainerParty;
@@ -44,6 +46,8 @@ public class BattleSystem : MonoBehaviour
 		rivalImage.sprite = rival.TrainerSprite;
 
 		enemyAI = rival.TrainerAI;
+
+		forbiddenSound = gameObject.GetComponent<AudioSource>();
 	}
 
 	public void StartBattle()
@@ -160,6 +164,7 @@ public class BattleSystem : MonoBehaviour
 			else if (currentAction == 1)
 			{
 				//Bag
+				forbiddenSound.Play();
 			}
 
 			if (currentAction == 2)
