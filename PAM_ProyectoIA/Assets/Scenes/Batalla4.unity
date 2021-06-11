@@ -123,6 +123,23 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &21209374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9079822800673984479, guid: 0b3d46818ffc59b4bb22617d32702275, type: 3}
+  m_PrefabInstance: {fileID: 6845485078201864369}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &21209375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21209374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e3bfdf99b25044aa5dc4157d9adb12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &30512887
 GameObject:
   m_ObjectHideFlags: 0
@@ -3884,6 +3901,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PriorityBoss
       objectReference: {fileID: 0}
+    - target: {fileID: 6845485076971704332, guid: 0b3d46818ffc59b4bb22617d32702275, type: 3}
+      propertyPath: trainerAI
+      value: 
+      objectReference: {fileID: 21209375}
     - target: {fileID: 6845485076971704335, guid: 0b3d46818ffc59b4bb22617d32702275, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3928,7 +3949,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2707245380741199502, guid: 0b3d46818ffc59b4bb22617d32702275, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0b3d46818ffc59b4bb22617d32702275, type: 3}
 --- !u!114 &6845485078201864370 stripped
 MonoBehaviour:

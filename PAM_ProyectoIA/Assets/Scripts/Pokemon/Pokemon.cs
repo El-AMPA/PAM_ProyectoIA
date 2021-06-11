@@ -182,6 +182,27 @@ public class Pokemon
 		return damageDetails;
 	}
 
+	//Esto lo usamos para calcular el daño aproximado que hará un ataque para la IA buena
+	public int SimulateDamage(Move move, Pokemon attacker)
+	{
+		float type = TypeChart.GetEffectiveness(move.Base.Type, this.Base.Type1) * TypeChart.GetEffectiveness(move.Base.Type, this.Base.Type2);
+
+		float stab = 1f;
+		if (move.Base.Type == this.Base.Type1 || move.Base.Type == this.Base.Type2)
+			stab = 1.5f;
+
+		float attack = (move.Base.Category == MoveCategory.Special) ? attacker.SpAttack : attacker.Attack;
+		float defense = (move.Base.Category == MoveCategory.Special) ? SpDefense : Defense;
+
+		float modifiers = Random.Range(0.85f, 1f) * type * stab;
+		float a = (2 * attacker.Level + 10) / 250f;
+		float d = a * move.Base.Power * ((float)attack / defense) + 2;
+		int damage = Mathf.FloorToInt(d * modifiers);
+
+		return damage;
+	}
+
+
 	public void UpdateHP(int damage)
 	{
 		HP = Mathf.Clamp(HP - damage, 0, MaxHP);
