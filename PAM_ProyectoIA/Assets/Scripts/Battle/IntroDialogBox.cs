@@ -25,6 +25,15 @@ public class IntroDialogBox : MonoBehaviour
 		gameObject.SetActive(false);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+			battleSystem.StartBattle();
+			gameObject.SetActive(false);
+        }
+    }
+
     public void SetDialog(string dialog)
 	{
 		dialogText.text = dialog;

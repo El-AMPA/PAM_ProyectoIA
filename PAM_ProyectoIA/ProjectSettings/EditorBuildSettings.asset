@@ -6,9 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenuScene.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: b5ea48a932c57e746bd9f82dad4f0d34
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Batalla1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Batalla2.unity
+    guid: 1fec68752f3c56243afc4c589c0dd5b5
+  - enabled: 1
+    path: Assets/Scenes/Batalla3.unity
+    guid: 6c33ac27d38ced840b6aef14c30d3d1d
+  - enabled: 1
+    path: Assets/Scenes/Batalla4.unity
+    guid: 1c5419949e5d37148b8f32f5248708b0
   m_configObjects: {}

@@ -119,6 +119,7 @@ public class BattleSystem : MonoBehaviour
 
 	private void Update()
 	{
+		if (Input.GetKeyDown(KeyCode.Escape)) SceneManager.LoadScene("MainMenu");
 		if (state == BattleState.ActionSelection)
 		{
 			HandleActionSelection();
@@ -481,7 +482,7 @@ public class BattleSystem : MonoBehaviour
 
 			yield return new WaitForSeconds(1f);
 
-			CheckForBattleOver(sourceUnit);
+			yield return CheckForBattleOver(sourceUnit);
 			yield return new WaitUntil(() => state == BattleState.RunningTurn);
 		}
 	}
@@ -582,13 +583,13 @@ public class BattleSystem : MonoBehaviour
 		{
 			yield return dialogBox.TypeDialog("¡Has ganado la batalla!");
 			yield return new WaitForSeconds(3f);
-			SceneManager.LoadScene("MainMenuScene");
+			SceneManager.LoadScene("MainMenu");
 		}
 		else
 		{
 			yield return dialogBox.TypeDialog("Has perdido la batalla...");
 			yield return new WaitForSeconds(5f);
-			SceneManager.LoadScene("MainMenuScene");
+			SceneManager.LoadScene("MainMenu");
 		}
 	}
 	IEnumerator ShowDamageDetails(DamageDetails damageDetails)

@@ -27,4 +27,3 @@ MonoBehaviour:
   speed: 110
   knownMoves:
   - {fileID: 11400000, guid: 4c3e365f874def14a9bd61c5b4633bca, type: 2}
-  - {fileID: 11400000, guid: 27184f0f544037744a12b1aade155ea3, type: 2}
