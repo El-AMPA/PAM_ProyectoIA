@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4dfeb2cf2fa40ba45ab8f038bedb2c6c, type: 3}
-  m_Name: Rapidash
+  m_Name: Rapidash_Blaine
   m_EditorClassIdentifier: 
   name: Rapidash
   description: 
@@ -26,7 +26,6 @@ MonoBehaviour:
   spDefense: 80
   speed: 105
   knownMoves:
-  - {fileID: 11400000, guid: 62b02cb4b629ce54a906533a05778a66, type: 2}
+  - {fileID: 11400000, guid: 5f085f97512404f4985ffc01c924efeb, type: 2}
   - {fileID: 11400000, guid: b3d4af4621301b4469fafdce9d77a58c, type: 2}
   - {fileID: 11400000, guid: 2a61277e26183bd48b2f456853a8bdb8, type: 2}
-  - {fileID: 11400000, guid: b0b74c31c696cde488da6bcd1219533c, type: 2}
