@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Suicune
   description: 
   frontSprite: {fileID: 21300000, guid: 015e593aaae0ce4499fe8921f77f6fcf, type: 3}
-  backSprite: {fileID: 21300000, guid: 01bcbc8c72b11324fa159d51106f6800, type: 3}
+  backSprite: {fileID: 21300000, guid: 24f92ccb895ab9749962f6c0c25f27d6, type: 3}
   cry: {fileID: 8300000, guid: 00dadae5ad29b824bbbbfb0c819401d9, type: 3}
   type1: 3
   type2: 0
