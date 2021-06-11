@@ -3952,12 +3952,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 7375bf627a1736b4fa14c84f8d8e5942, type: 2}
     - target: {fileID: 2468330131756953334, guid: 61b71317e9219904bbf77a8b87fd4d0f, type: 3}
+      propertyPath: pokemon.Array.data[0].level
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2468330131756953334, guid: 61b71317e9219904bbf77a8b87fd4d0f, type: 3}
       propertyPath: pokemon.Array.data[1]._base
       value: 
       objectReference: {fileID: 11400000, guid: 56312f44674f05a4baf63d1005db4ee7, type: 2}
     - target: {fileID: 2468330131756953334, guid: 61b71317e9219904bbf77a8b87fd4d0f, type: 3}
       propertyPath: pokemon.Array.data[1].level
-      value: 39
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2468330131756953334, guid: 61b71317e9219904bbf77a8b87fd4d0f, type: 3}
       propertyPath: pokemon.Array.data[2]._base
@@ -3965,7 +3969,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 779401d720e481e439f5d3a7b3c1d33d, type: 2}
     - target: {fileID: 2468330131756953334, guid: 61b71317e9219904bbf77a8b87fd4d0f, type: 3}
       propertyPath: pokemon.Array.data[2].level
-      value: 37
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2468330131756953334, guid: 61b71317e9219904bbf77a8b87fd4d0f, type: 3}
+      propertyPath: pokemon.Array.data[3].level
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61b71317e9219904bbf77a8b87fd4d0f, type: 3}
@@ -4065,6 +4073,8 @@ MonoBehaviour:
   pointsOnDefInmunity: 3
   pointsOnDefAdvantage: 1
   pointsOnDefDisadvantage: -1
+  maxStatDrops: 2
+  maxStatBoosts: 4
 --- !u!1001 &6733100518930619017
 PrefabInstance:
   m_ObjectHideFlags: 0

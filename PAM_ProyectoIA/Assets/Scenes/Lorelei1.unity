@@ -3883,11 +3883,19 @@ PrefabInstance:
     - target: {fileID: 4191097314438831154, guid: a43d3a91aac92524d91719a53a336963, type: 3}
       propertyPath: pokemon.Array.data[0]._base
       value: 
-      objectReference: {fileID: 11400000, guid: 04c291335b44a4949af16f269f85fa54, type: 2}
+      objectReference: {fileID: 11400000, guid: 3f2114b136f852743a0ed47554e7ba98, type: 2}
+    - target: {fileID: 4191097314438831154, guid: a43d3a91aac92524d91719a53a336963, type: 3}
+      propertyPath: pokemon.Array.data[0].level
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 4191097314438831154, guid: a43d3a91aac92524d91719a53a336963, type: 3}
       propertyPath: pokemon.Array.data[1]._base
       value: 
-      objectReference: {fileID: 11400000, guid: 3f2114b136f852743a0ed47554e7ba98, type: 2}
+      objectReference: {fileID: 11400000, guid: 04c291335b44a4949af16f269f85fa54, type: 2}
+    - target: {fileID: 4191097314438831154, guid: a43d3a91aac92524d91719a53a336963, type: 3}
+      propertyPath: pokemon.Array.data[1].level
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 4191097314438831155, guid: a43d3a91aac92524d91719a53a336963, type: 3}
       propertyPath: m_Name
       value: Lorelei
@@ -3974,11 +3982,11 @@ PrefabInstance:
     - target: {fileID: 4681522929772170420, guid: 3304e53de54130d4bb1db3d84810caea, type: 3}
       propertyPath: pokemon.Array.data[0]._base
       value: 
-      objectReference: {fileID: 11400000, guid: f1481d3f7d670e34c91949e7ca833967, type: 2}
+      objectReference: {fileID: 11400000, guid: 122992e452fc18a46b11a73040dc846b, type: 2}
     - target: {fileID: 4681522929772170420, guid: 3304e53de54130d4bb1db3d84810caea, type: 3}
       propertyPath: pokemon.Array.data[1]._base
       value: 
-      objectReference: {fileID: 11400000, guid: 122992e452fc18a46b11a73040dc846b, type: 2}
+      objectReference: {fileID: 11400000, guid: f1481d3f7d670e34c91949e7ca833967, type: 2}
     - target: {fileID: 4681522929772170421, guid: 3304e53de54130d4bb1db3d84810caea, type: 3}
       propertyPath: m_Name
       value: Player vs Lorelei
