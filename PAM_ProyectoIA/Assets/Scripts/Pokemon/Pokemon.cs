@@ -93,7 +93,7 @@ public class Pokemon
 		if (boost >= 0)
 			statVal = Mathf.FloorToInt(statVal * boostValues[boost]);
 		else
-			statVal = Mathf.FloorToInt(statVal / boostValues[boost]);
+			statVal = Mathf.FloorToInt(statVal / boostValues[Mathf.Abs(boost)]);
 
 		return statVal;
 	}
@@ -116,7 +116,7 @@ public class Pokemon
 				StatusChanges.Enqueue($"¡La estadística {stat} de {Base.Name} ha disminuido!");
 			}
 
-			Debug.Log(stat + "has been bosted to " + StatBoosts[stat]);
+			Debug.Log(stat + " has been bosted to " + StatBoosts[stat]);
 		}
 	}
 
