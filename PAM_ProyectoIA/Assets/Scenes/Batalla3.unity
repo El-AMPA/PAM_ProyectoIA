@@ -845,7 +845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5490318665218739178, guid: 572f98e7653ed1a4c9664bc4f467f068, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 15.080017
+      value: 15.080016
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 572f98e7653ed1a4c9664bc4f467f068, type: 3}
@@ -1366,7 +1366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5490318665218739178, guid: 572f98e7653ed1a4c9664bc4f467f068, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 15.080017
+      value: 15.080016
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 572f98e7653ed1a4c9664bc4f467f068, type: 3}
@@ -2123,7 +2123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5490318665218739178, guid: 572f98e7653ed1a4c9664bc4f467f068, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 15.080017
+      value: 15.080016
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 572f98e7653ed1a4c9664bc4f467f068, type: 3}
@@ -3665,6 +3665,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PartyMember
       objectReference: {fileID: 0}
+    - target: {fileID: 5490318665218739178, guid: 572f98e7653ed1a4c9664bc4f467f068, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 15.080016
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 572f98e7653ed1a4c9664bc4f467f068, type: 3}
 --- !u!224 &155425389265104402 stripped
@@ -3766,6 +3770,10 @@ PrefabInstance:
     - target: {fileID: 1995399733330772399, guid: 572f98e7653ed1a4c9664bc4f467f068, type: 3}
       propertyPath: m_Name
       value: PartyMember (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5490318665218739178, guid: 572f98e7653ed1a4c9664bc4f467f068, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 15.080016
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 572f98e7653ed1a4c9664bc4f467f068, type: 3}
@@ -4101,6 +4109,10 @@ PrefabInstance:
     - target: {fileID: 1995399733330772399, guid: 572f98e7653ed1a4c9664bc4f467f068, type: 3}
       propertyPath: m_Name
       value: PartyMember (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5490318665218739178, guid: 572f98e7653ed1a4c9664bc4f467f068, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 15.080016
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 572f98e7653ed1a4c9664bc4f467f068, type: 3}
