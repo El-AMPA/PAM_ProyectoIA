@@ -1582,8 +1582,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pokemon:
-  - _base: {fileID: 11400000, guid: fe1000a11160b604dae6ee02d3d6697b, type: 2}
-    level: 50
+  - _base: {fileID: 11400000, guid: 43622eea49dc3994d93541babaff97c4, type: 2}
+    level: 60
   nFullHeals: 0
   nMaxPotions: 0
 --- !u!114 &1044364022
@@ -1748,7 +1748,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1fdc24b87b4d88e4fb53d41db10861e4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2567,8 +2567,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6f7c87f3f765fa4c858b78bc3b5c022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  introMessage: "Kon'nichiwa, watashi wa Miku Hatsune desu. Kono k\u014Dsude wa,
-    bideog\u0113mu no jink\u014D chin\u014D no sensei ni narimasu."
+  introMessage: "\xA1Ay perdona. El idioma me cuesta! En el juego original, los entrenadores
+    siempre sacan al siguiente Pok\xE9mon que tengan en su equipo. Tengo un Pok\xE9mon
+    super-fuerte contra el tuyo pero como soy un poco tonta no lo podr\xE9 sacar
+    hasta el final. \xA1Jope!"
   lettersPerSecond: 38
   dialogText: {fileID: 650491998}
   battleSystem: {fileID: 30512889}
@@ -3385,8 +3387,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pokemon:
-  - _base: {fileID: 11400000, guid: 10c15c65ae3dd12429b02e2c2c66ce3a, type: 2}
-    level: 60
+  - _base: {fileID: 11400000, guid: 8b07c8d084c3fc14884f7f7eb6b450a6, type: 2}
+    level: 15
+  - _base: {fileID: 11400000, guid: c2dbcb853e361d345b4b8723fe7fe3cd, type: 2}
+    level: 15
+  - _base: {fileID: 11400000, guid: 7b42af61a1f5c0e4794eeb4db30d46ef, type: 2}
+    level: 15
+  - _base: {fileID: 11400000, guid: e291aa599e1beb343b3be47b7e4da3ef, type: 2}
+    level: 100
   nFullHeals: 0
   nMaxPotions: 0
 --- !u!114 &2035761341

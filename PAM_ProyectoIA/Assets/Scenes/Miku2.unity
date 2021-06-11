@@ -144,6 +144,8 @@ MonoBehaviour:
   pointsOnDefInmunity: 3
   pointsOnDefAdvantage: 1
   pointsOnDefDisadvantage: -1
+  maxStatDrops: 2
+  maxStatBoosts: 4
 --- !u!1 &30512887
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,7 +210,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0775515a72aaffb4c8d80416f3a20126, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1603,8 +1605,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pokemon:
-  - _base: {fileID: 11400000, guid: fe1000a11160b604dae6ee02d3d6697b, type: 2}
-    level: 50
+  - _base: {fileID: 11400000, guid: 43622eea49dc3994d93541babaff97c4, type: 2}
+    level: 60
   nFullHeals: 0
   nMaxPotions: 0
 --- !u!114 &1044364022
@@ -2589,7 +2591,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   introMessage: "Kon'nichiwa, Miku Hatsune desu. Anata wa watashi no Pok\xE9mon o
-    koroshita. Shinu tame no junbi."
+    koroshita. Shinu tame no junbi. \xA1Muajaja... Ahora que he desarrollado una
+    inteligencia superior, sabr\xE9 ex\xE1ctamente a qu\xE9 Pok\xE9mon cambiar despu\xE9s
+    que derrotes a este! \xA1El mundo es m\xEDo!"
   lettersPerSecond: 38
   dialogText: {fileID: 650491998}
   battleSystem: {fileID: 30512889}
@@ -3406,8 +3410,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pokemon:
-  - _base: {fileID: 11400000, guid: 10c15c65ae3dd12429b02e2c2c66ce3a, type: 2}
-    level: 60
+  - _base: {fileID: 11400000, guid: 8b07c8d084c3fc14884f7f7eb6b450a6, type: 2}
+    level: 15
+  - _base: {fileID: 11400000, guid: c2dbcb853e361d345b4b8723fe7fe3cd, type: 2}
+    level: 15
+  - _base: {fileID: 11400000, guid: 7b42af61a1f5c0e4794eeb4db30d46ef, type: 2}
+    level: 15
+  - _base: {fileID: 11400000, guid: e291aa599e1beb343b3be47b7e4da3ef, type: 2}
+    level: 100
   nFullHeals: 0
   nMaxPotions: 0
 --- !u!114 &2035761341
