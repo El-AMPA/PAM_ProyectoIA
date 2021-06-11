@@ -347,6 +347,7 @@ public class BattleSystem : MonoBehaviour
 		{
 			var selectedPokemon = playerParty.Pokemons[currentMember];
 			state = BattleState.Busy;
+			enemyAI.onEnemySwitch(playerUnit.Pokemon);
 			yield return SwitchPokemon(selectedPokemon, playerUnit);
 			playerCanMove = false;
 		}
@@ -390,7 +391,10 @@ public class BattleSystem : MonoBehaviour
 
 		//Primer turno
 
-		if (playerCanMove) yield return RunMove(firstUnit, secondUnit, firstUnit.Pokemon.CurrentMove);
+		if (playerCanMove) {
+			enemyAI.onEnemyAttack();
+			yield return RunMove(firstUnit, secondUnit, firstUnit.Pokemon.CurrentMove);
+		}
 		yield return RunAfterTurn(firstUnit);
 		if (state == BattleState.BattleOver) yield break;
 
@@ -451,6 +455,7 @@ public class BattleSystem : MonoBehaviour
 
 			if (targetUnit.Pokemon.HP <= 0)
 			{
+				if (targetUnit == playerUnit) enemyAI.onEnemyAttack(); //Se rompe la cadena de intercambios
 				yield return dialogBox.TypeDialog($"¡{targetUnit.Pokemon.Base.Name} se ha debilitado!");
 				targetUnit.PlayFaintAnimation();
 

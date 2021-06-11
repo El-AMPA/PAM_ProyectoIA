@@ -22,7 +22,7 @@ MonoBehaviour:
   maxHP: 75
   attack: 55
   deffense: 70
-  spAttack: 55
+  spAttack: 30
   spDefense: 85
   speed: 110
   knownMoves:

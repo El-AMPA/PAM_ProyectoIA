@@ -1184,6 +1184,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &768778375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6270650836484356243, guid: 95a246503733134449fe8a2b911a0a0f, type: 3}
+  m_PrefabInstance: {fileID: 3763912294365284827}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &768778376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768778375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e3bfdf99b25044aa5dc4157d9adb12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offensiveStatusThreshold: 0.8
+  defensiveStatusThreshold: 0.3
+  switchThreshold: 3
 --- !u!1 &901973285
 GameObject:
   m_ObjectHideFlags: 0
@@ -3901,11 +3921,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3763912293992455921, guid: 95a246503733134449fe8a2b911a0a0f, type: 3}
+      propertyPath: pokemon.Array.data[0].level
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3763912293992455922, guid: 95a246503733134449fe8a2b911a0a0f, type: 3}
       propertyPath: m_Name
       value: Jorge con el Perro
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3763912293992455927, guid: 95a246503733134449fe8a2b911a0a0f, type: 3}
+      propertyPath: trainerAI
+      value: 
+      objectReference: {fileID: 768778376}
+    m_RemovedComponents:
+    - {fileID: 159132212, guid: 95a246503733134449fe8a2b911a0a0f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 95a246503733134449fe8a2b911a0a0f, type: 3}
 --- !u!114 &3763912294365284828 stripped
 MonoBehaviour:

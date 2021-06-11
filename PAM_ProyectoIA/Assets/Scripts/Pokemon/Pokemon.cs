@@ -194,7 +194,7 @@ public class Pokemon
 		float attack = (move.Base.Category == MoveCategory.Special) ? attacker.SpAttack : attacker.Attack;
 		float defense = (move.Base.Category == MoveCategory.Special) ? SpDefense : Defense;
 
-		float modifiers = Random.Range(0.85f, 1f) * type * stab;
+		float modifiers = 0.9f * type * stab;
 		float a = (2 * attacker.Level + 10) / 250f;
 		float d = a * move.Base.Power * ((float)attack / defense) + 2;
 		int damage = Mathf.FloorToInt(d * modifiers);

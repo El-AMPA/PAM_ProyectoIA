@@ -24,6 +24,6 @@ MonoBehaviour:
   effects:
     boosts: []
     status: 0
-    volatileStatus: 7
+    volatileStatus: 8
   target: 0
   secondaries: []

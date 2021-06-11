@@ -36,4 +36,14 @@ public class PokemonIA : MonoBehaviour
     {
         return myParty.GetHealthyPokemon();
     }
+
+    public virtual void onEnemySwitch(Pokemon pokemon)
+    {
+
+    }
+
+    public virtual void onEnemyAttack()
+    {
+
+    }
 }

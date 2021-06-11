@@ -28,4 +28,3 @@ MonoBehaviour:
   knownMoves:
   - {fileID: 11400000, guid: 528611fb6bff6a743b3ca1350ddbe0cc, type: 2}
   - {fileID: 11400000, guid: 7e8d8529dfa9aca48bb41e0484deea28, type: 2}
-  - {fileID: 11400000, guid: 2853bc9c43fc69442bbe7fb5b49e2afe, type: 2}
