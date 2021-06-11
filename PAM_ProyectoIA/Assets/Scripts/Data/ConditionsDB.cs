@@ -169,7 +169,8 @@ public static Dictionary<ConditionID, Condition> Conditions { get; set; } = new 
 					if(Random.Range(1,3) == 1) return true;
 
 					//Hurt by confusion
-					pokemon.UpdateHP(pokemon.MaxHP/8);
+					float damage = 40 * (float)pokemon.Attack/pokemon.Defense;
+					pokemon.UpdateHP((int)damage);
 					pokemon.StatusChanges.Enqueue("¡Está tan confuso que se ha herido a sí mismo!");
 					return false;
 				}

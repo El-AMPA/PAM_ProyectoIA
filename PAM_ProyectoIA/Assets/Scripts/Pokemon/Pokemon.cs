@@ -69,7 +69,7 @@ public class Pokemon
 		MaxHP = Mathf.FloorToInt((2 * Base.MaxHP * Level) / 100f) + Level + 10;
 	}
 
-	void ResetStatBoosts()
+	public void ResetStatBoosts()
 	{
 		StatBoosts = new Dictionary<Stat, int>()
 		{
@@ -172,6 +172,8 @@ public class Pokemon
 		float attack = (move.Base.Category == MoveCategory.Special) ? attacker.SpAttack : attacker.Attack;
 		float defense = (move.Base.Category == MoveCategory.Special) ? SpDefense : Defense;
 
+		if (attack == attacker.Attack) attack = (attacker.Status?.Id == ConditionID.brn) ? attack / 2 : attack;
+
 		float modifiers = Random.Range(0.85f, 1f) * type * critical * stab;
 		float a = (2 * attacker.Level + 10) / 250f;
 		float d = a * move.Base.Power * ((float)attack / defense) + 2;
@@ -193,6 +195,8 @@ public class Pokemon
 
 		float attack = (move.Base.Category == MoveCategory.Special) ? attacker.SpAttack : attacker.Attack;
 		float defense = (move.Base.Category == MoveCategory.Special) ? SpDefense : Defense;
+
+		if (attack == attacker.Attack) attack = (attacker.Status?.Id == ConditionID.brn) ? attack / 2 : attack;
 
 		float modifiers = 0.9f * type * stab;
 		float a = (2 * attacker.Level + 10) / 250f;
