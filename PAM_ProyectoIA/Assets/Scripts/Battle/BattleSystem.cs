@@ -52,7 +52,7 @@ public class BattleSystem : MonoBehaviour
 	}
 
 	public void StartBattle()
-    {
+	{
 		StartCoroutine(SetupBattle());
 	}
 
@@ -311,6 +311,8 @@ public class BattleSystem : MonoBehaviour
 			yield return dialogBox.TypeDialog($"¡Vuelve, {unit.Pokemon.Base.Name}!");
 			unit.PlayFaintAnimation();
 			yield return new WaitForSeconds(2f);
+			unit.Pokemon.CureVolatileStatus();
+			unit.Pokemon.ResetStatBoosts();
 		}
 
 		unit.Setup(newPokemon);
@@ -384,11 +386,14 @@ public class BattleSystem : MonoBehaviour
 			int playerMovePriority = playerUnit.Pokemon.CurrentMove.Base.Priority;
 			int enemyMovePriority = enemyUnit.Pokemon.CurrentMove.Base.Priority;
 
+			int playerSpeed = (playerUnit.Pokemon.Status?.Id == ConditionID.par) ? playerUnit.Pokemon.Speed / 4 : playerUnit.Pokemon.Speed;
+			int enemySpeed = (enemyUnit.Pokemon.Status?.Id == ConditionID.par) ? enemyUnit.Pokemon.Speed / 4 : enemyUnit.Pokemon.Speed;
+
 			//Comprobar quién va primero
 			if (enemyMovePriority > playerMovePriority)
 				playerGoesFirst = false;
 			else if (enemyMovePriority == playerMovePriority)
-				playerGoesFirst = playerUnit.Pokemon.Speed >= enemyUnit.Pokemon.Speed;
+				playerGoesFirst = playerSpeed >= enemySpeed;
 		}
 
 		var firstUnit = (playerGoesFirst) ? playerUnit : enemyUnit;
@@ -398,7 +403,8 @@ public class BattleSystem : MonoBehaviour
 
 		//Primer turno
 
-		if (playerCanMove) {
+		if (playerCanMove)
+		{
 			enemyAI.onEnemyAttack();
 			yield return RunMove(firstUnit, secondUnit, firstUnit.Pokemon.CurrentMove);
 		}
