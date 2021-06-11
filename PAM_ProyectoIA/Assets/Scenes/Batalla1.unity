@@ -3855,11 +3855,11 @@ PrefabInstance:
     - target: {fileID: 2468330131756953334, guid: 61b71317e9219904bbf77a8b87fd4d0f, type: 3}
       propertyPath: pokemon.Array.data[0]._base
       value: 
-      objectReference: {fileID: 11400000, guid: 56312f44674f05a4baf63d1005db4ee7, type: 2}
+      objectReference: {fileID: 11400000, guid: 7375bf627a1736b4fa14c84f8d8e5942, type: 2}
     - target: {fileID: 2468330131756953334, guid: 61b71317e9219904bbf77a8b87fd4d0f, type: 3}
       propertyPath: pokemon.Array.data[1]._base
       value: 
-      objectReference: {fileID: 11400000, guid: 7375bf627a1736b4fa14c84f8d8e5942, type: 2}
+      objectReference: {fileID: 11400000, guid: 56312f44674f05a4baf63d1005db4ee7, type: 2}
     - target: {fileID: 2468330131756953334, guid: 61b71317e9219904bbf77a8b87fd4d0f, type: 3}
       propertyPath: pokemon.Array.data[1].level
       value: 39
@@ -3889,6 +3889,10 @@ PrefabInstance:
       propertyPath: nFullHeals
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5407568666514212076, guid: 17398f3f7006dea42a6d5ab840bacf39, type: 3}
+      propertyPath: pokemon.Array.data[3]._base
+      value: 
+      objectReference: {fileID: 11400000, guid: 2727dfe8c771c47458a097b3c5363afa, type: 2}
     - target: {fileID: 5407568666514212077, guid: 17398f3f7006dea42a6d5ab840bacf39, type: 3}
       propertyPath: trainerAI
       value: 
@@ -3960,6 +3964,12 @@ MonoBehaviour:
   offensiveThreshold: 0.8
   defensiveThreshold: 0.3
   switchThreshold: 3
+  pointsOnOffTypeAdvante: 1
+  pointsOnKill: 2
+  pointsOnKillWithPrio: 99
+  pointsOnDefInmunity: 3
+  pointsOnDefAdvantage: 1
+  pointsOnDefDisadvantage: -1
 --- !u!1001 &6733100518930619017
 PrefabInstance:
   m_ObjectHideFlags: 0

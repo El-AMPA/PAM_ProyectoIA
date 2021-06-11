@@ -570,7 +570,7 @@ public class BattleSystem : MonoBehaviour
 		}
 		else
 		{
-			var nextPokemon = rivalParty.GetHealthyPokemon();
+			var nextPokemon = enemyAI.decideNextPokemon();
 			if (nextPokemon != null)
 			{
 				StartCoroutine(AboutToUse(nextPokemon));
