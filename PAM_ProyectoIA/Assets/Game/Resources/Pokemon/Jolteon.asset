@@ -27,6 +27,6 @@ MonoBehaviour:
   speed: 130
   knownMoves:
   - {fileID: 11400000, guid: 7e8d8529dfa9aca48bb41e0484deea28, type: 2}
+  - {fileID: 11400000, guid: 8dfda1ea73783e649b05016de5be95cc, type: 2}
   - {fileID: 11400000, guid: 0444d8a7ed6606d44bb01246ff8dcf1c, type: 2}
-  - {fileID: 11400000, guid: 27184f0f544037744a12b1aade155ea3, type: 2}
   - {fileID: 11400000, guid: 4c3e365f874def14a9bd61c5b4633bca, type: 2}

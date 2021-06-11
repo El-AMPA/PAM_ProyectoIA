@@ -31,12 +31,12 @@ public class ItemsDB
 					}
 					if (pokemon.Status != null)
                     {
-						pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} se ha recuperado del estado {pokemon.Status.ToString()}");
+						pokemon.StatusChanges.Enqueue($"El enemigo usó una cura total sobre {pokemon.Base.Name} y se ha recuperado del estado {pokemon.Status.Id.ToString()}.");
 						pokemon.CureStatus();
 					}
 					if (pokemon.VolatileStatus != null)
 					{
-						pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} se ha recuperado del estado {pokemon.VolatileStatus.ToString()}");
+						pokemon.StatusChanges.Enqueue($"El enemigo usó una cura total sobre {pokemon.Base.Name} y se ha recuperado del estado  {pokemon.VolatileStatus.Id.ToString()}.");
 						pokemon.CureVolatileStatus();
 					}
                 }
@@ -52,11 +52,11 @@ public class ItemsDB
 					pokemon.HealToFull();
 					if (pokemon.HpChanged)
                     {
-						pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} se ha curado del todo");
+						pokemon.StatusChanges.Enqueue($"El enemigo utilizó una poción máxima sobre {pokemon.Base.Name} y se ha curado completamente.");
                     }
 					else
                     {
-						pokemon.StatusChanges.Enqueue($"La poción máxima no ha tenido efecto en {pokemon.Base.Name}");
+						pokemon.StatusChanges.Enqueue($"La poción máxima no ha tenido efecto en {pokemon.Base.Name}.");
 					}
                 }
             }

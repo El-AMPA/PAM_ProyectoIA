@@ -3852,6 +3852,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2468330131756953334, guid: 61b71317e9219904bbf77a8b87fd4d0f, type: 3}
+      propertyPath: pokemon.Array.data[0]._base
+      value: 
+      objectReference: {fileID: 11400000, guid: 56312f44674f05a4baf63d1005db4ee7, type: 2}
+    - target: {fileID: 2468330131756953334, guid: 61b71317e9219904bbf77a8b87fd4d0f, type: 3}
+      propertyPath: pokemon.Array.data[1]._base
+      value: 
+      objectReference: {fileID: 11400000, guid: 7375bf627a1736b4fa14c84f8d8e5942, type: 2}
+    - target: {fileID: 2468330131756953334, guid: 61b71317e9219904bbf77a8b87fd4d0f, type: 3}
+      propertyPath: pokemon.Array.data[1].level
+      value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 2468330131756953334, guid: 61b71317e9219904bbf77a8b87fd4d0f, type: 3}
+      propertyPath: pokemon.Array.data[2]._base
+      value: 
+      objectReference: {fileID: 11400000, guid: 779401d720e481e439f5d3a7b3c1d33d, type: 2}
+    - target: {fileID: 2468330131756953334, guid: 61b71317e9219904bbf77a8b87fd4d0f, type: 3}
+      propertyPath: pokemon.Array.data[2].level
+      value: 37
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61b71317e9219904bbf77a8b87fd4d0f, type: 3}
 --- !u!1001 &5407568667303614520
@@ -3865,6 +3885,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blaine
       objectReference: {fileID: 0}
+    - target: {fileID: 5407568666514212076, guid: 17398f3f7006dea42a6d5ab840bacf39, type: 3}
+      propertyPath: nFullHeals
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407568666514212077, guid: 17398f3f7006dea42a6d5ab840bacf39, type: 3}
+      propertyPath: trainerAI
+      value: 
+      objectReference: {fileID: 5407568667303614522}
     - target: {fileID: 5407568666514212078, guid: 17398f3f7006dea42a6d5ab840bacf39, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3909,8 +3937,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2933688817005650165, guid: 17398f3f7006dea42a6d5ab840bacf39, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 17398f3f7006dea42a6d5ab840bacf39, type: 3}
+--- !u!1 &5407568667303614521 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8289995073522697818, guid: 17398f3f7006dea42a6d5ab840bacf39, type: 3}
+  m_PrefabInstance: {fileID: 5407568667303614520}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5407568667303614522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5407568667303614521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e3bfdf99b25044aa5dc4157d9adb12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offensiveThreshold: 0.8
+  defensiveThreshold: 0.3
+  switchThreshold: 3
 --- !u!1001 &6733100518930619017
 PrefabInstance:
   m_ObjectHideFlags: 0

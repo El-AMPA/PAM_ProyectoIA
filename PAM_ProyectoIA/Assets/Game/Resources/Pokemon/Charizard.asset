@@ -28,5 +28,5 @@ MonoBehaviour:
   knownMoves:
   - {fileID: 11400000, guid: a2a8b2385f8dc76458f4ee051ba85186, type: 2}
   - {fileID: 11400000, guid: 2a61277e26183bd48b2f456853a8bdb8, type: 2}
-  - {fileID: 11400000, guid: 27184f0f544037744a12b1aade155ea3, type: 2}
+  - {fileID: 11400000, guid: 542292ad41e7e4d43af36526c7e6d673, type: 2}
   - {fileID: 11400000, guid: bca2359a0212bed44951158caac2bd80, type: 2}

@@ -24,7 +24,7 @@ public class IA_dIAblo : PokemonIA
 		ItemID item = ItemID.NULL;
 		if (myParty.NFullHeals > 0)
 		{
-			if (myUnit.Pokemon.HP >= defensiveThreshold * myUnit.Pokemon.MaxHP && (myUnit.Pokemon.Status != null || myUnit.Pokemon.VolatileStatus!= null)) item = ItemID.fullHeal;
+			if (myUnit.Pokemon.HP >= offensiveThreshold * myUnit.Pokemon.MaxHP && (myUnit.Pokemon.Status != null || myUnit.Pokemon.VolatileStatus!= null)) item = ItemID.fullHeal;
 		}
 		if (myParty.NMaxPotions > 0)
 		{
