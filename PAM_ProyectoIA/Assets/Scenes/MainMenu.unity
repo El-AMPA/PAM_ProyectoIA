@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6629157711168586717, guid: f412edc716293f840a7b65c867a72685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Batalla3
+      value: Jorge2
       objectReference: {fileID: 0}
     - target: {fileID: 6709525048422810580, guid: f412edc716293f840a7b65c867a72685, type: 3}
       propertyPath: m_Pivot.x
@@ -353,7 +353,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6629157711168586717, guid: f412edc716293f840a7b65c867a72685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Batalla2
+      value: Lorelei2
       objectReference: {fileID: 0}
     - target: {fileID: 6709525048422810580, guid: f412edc716293f840a7b65c867a72685, type: 3}
       propertyPath: m_Pivot.x
@@ -693,7 +693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6629157711168586717, guid: f412edc716293f840a7b65c867a72685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Batalla1
+      value: Blaine2
       objectReference: {fileID: 0}
     - target: {fileID: 6709525048422810580, guid: f412edc716293f840a7b65c867a72685, type: 3}
       propertyPath: m_Pivot.x
@@ -803,7 +803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6629157711168586717, guid: f412edc716293f840a7b65c867a72685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Batalla4
+      value: Joserra2
       objectReference: {fileID: 0}
     - target: {fileID: 6709525048422810580, guid: f412edc716293f840a7b65c867a72685, type: 3}
       propertyPath: m_Pivot.x
@@ -1103,7 +1103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6629157711168586717, guid: f412edc716293f840a7b65c867a72685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Batalla3
+      value: Jorge1
       objectReference: {fileID: 0}
     - target: {fileID: 6709525048422810580, guid: f412edc716293f840a7b65c867a72685, type: 3}
       propertyPath: m_Pivot.x
@@ -1208,7 +1208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6629157711168586717, guid: f412edc716293f840a7b65c867a72685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Batalla2
+      value: Lorelei1
       objectReference: {fileID: 0}
     - target: {fileID: 6709525048422810580, guid: f412edc716293f840a7b65c867a72685, type: 3}
       propertyPath: m_Pivot.x
@@ -1313,7 +1313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6629157711168586717, guid: f412edc716293f840a7b65c867a72685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Batalla4
+      value: Joserra1
       objectReference: {fileID: 0}
     - target: {fileID: 6709525048422810580, guid: f412edc716293f840a7b65c867a72685, type: 3}
       propertyPath: m_Pivot.x
@@ -2162,7 +2162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6629157711168586717, guid: f412edc716293f840a7b65c867a72685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Batalla1
+      value: Blaine1
       objectReference: {fileID: 0}
     - target: {fileID: 6709525048422810580, guid: f412edc716293f840a7b65c867a72685, type: 3}
       propertyPath: m_Pivot.x

@@ -123,6 +123,23 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &21209374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9079822800673984479, guid: 0b3d46818ffc59b4bb22617d32702275, type: 3}
+  m_PrefabInstance: {fileID: 6845485078201864369}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &21209375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21209374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28acecd75173f954c98108ff61ec3c1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &30512887
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,8 +190,8 @@ MonoBehaviour:
   enemyUnit: {fileID: 61377924}
   dialogBox: {fileID: 1805846082}
   partyScreen: {fileID: 1807563950}
-  player: {fileID: 4681522930927230054}
-  rival: {fileID: 4191097314296295498}
+  player: {fileID: 8641254473736580565}
+  rival: {fileID: 6845485078201864370}
 --- !u!82 &30512890
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1682,7 +1699,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 68fc8e20b3c7dcc4b83b238f9a11d2a1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9524f9aeb107ea345ad7ad60a300b0d2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -2503,11 +2520,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6f7c87f3f765fa4c858b78bc3b5c022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  introMessage: "Los jefes de Pok\xE9mon en la primera generaci\xF3n, como Lorelei,
-    tienen una IA muy simple. Siempre utilizar\xE1n un movimiento de un tipo s\xFAper
-    efectivo contra tu Pok\xE9mon. Esta puede ser una estrategia infalible en algunas
-    ocasiones, pero no todos los movimientos hacen da\xF1o, y esto puede llevar a
-    problemas severos. \xA1Intenta romper la IA!"
+  introMessage: "A veces, utilizar el ataque m\xE1s poderoso nos puede costar la
+    victoria. Este enemigo te dejar\xE1 muy bajo de vida, y podr\xEDa terminar contigo
+    en el turno posterior con un ataque r\xE1pido, pero como prefiere usar movimientos
+    de tipo efectivo contra nuestro Pok\xE9mon, utilizar\xE1 un ataque m\xE1s lento
+    que dejar\xE1 margen a que lo venzamos nosotros antes."
   lettersPerSecond: 30
   dialogText: {fileID: 650491998}
   battleSystem: {fileID: 30512889}
@@ -2695,32 +2712,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1740745373 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4558278743659726212, guid: a43d3a91aac92524d91719a53a336963, type: 3}
-  m_PrefabInstance: {fileID: 4191097314296295497}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1740745374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1740745373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93e3bfdf99b25044aa5dc4157d9adb12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offensiveThreshold: 0.8
-  defensiveThreshold: 0.3
-  switchThreshold: 3
-  pointsOnOffTypeAdvante: 1
-  pointsOnKill: 2
-  pointsOnKillWithPrio: 99
-  pointsOnDefInmunity: 3
-  pointsOnDefAdvantage: 1
-  pointsOnDefDisadvantage: -1
 --- !u!1 &1805846078
 GameObject:
   m_ObjectHideFlags: 0
@@ -3519,7 +3510,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1106511937541109406, guid: 5e92e4381a92d5649bd2246f7decdb7b, type: 3}
+  m_Sprite: {fileID: -4277343822309770070, guid: 5e92e4381a92d5649bd2246f7decdb7b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3899,163 +3890,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1524067303043336085, guid: 572f98e7653ed1a4c9664bc4f467f068, type: 3}
   m_PrefabInstance: {fileID: 1988994825780292025}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &4191097314296295497
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4191097314438831154, guid: a43d3a91aac92524d91719a53a336963, type: 3}
-      propertyPath: pokemon.Array.data[0]._base
-      value: 
-      objectReference: {fileID: 11400000, guid: 04c291335b44a4949af16f269f85fa54, type: 2}
-    - target: {fileID: 4191097314438831154, guid: a43d3a91aac92524d91719a53a336963, type: 3}
-      propertyPath: pokemon.Array.data[1]._base
-      value: 
-      objectReference: {fileID: 11400000, guid: 3f2114b136f852743a0ed47554e7ba98, type: 2}
-    - target: {fileID: 4191097314438831155, guid: a43d3a91aac92524d91719a53a336963, type: 3}
-      propertyPath: m_Name
-      value: Lorelei
-      objectReference: {fileID: 0}
-    - target: {fileID: 4191097314438831156, guid: a43d3a91aac92524d91719a53a336963, type: 3}
-      propertyPath: trainerAI
-      value: 
-      objectReference: {fileID: 1740745374}
-    - target: {fileID: 4191097314438831157, guid: a43d3a91aac92524d91719a53a336963, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4191097314438831157, guid: a43d3a91aac92524d91719a53a336963, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -22.69089
-      objectReference: {fileID: 0}
-    - target: {fileID: 4191097314438831157, guid: a43d3a91aac92524d91719a53a336963, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 9.264896
-      objectReference: {fileID: 0}
-    - target: {fileID: 4191097314438831157, guid: a43d3a91aac92524d91719a53a336963, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 101.22366
-      objectReference: {fileID: 0}
-    - target: {fileID: 4191097314438831157, guid: a43d3a91aac92524d91719a53a336963, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4191097314438831157, guid: a43d3a91aac92524d91719a53a336963, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4191097314438831157, guid: a43d3a91aac92524d91719a53a336963, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4191097314438831157, guid: a43d3a91aac92524d91719a53a336963, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4191097314438831157, guid: a43d3a91aac92524d91719a53a336963, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4191097314438831157, guid: a43d3a91aac92524d91719a53a336963, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4191097314438831157, guid: a43d3a91aac92524d91719a53a336963, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1646910250521413151, guid: a43d3a91aac92524d91719a53a336963, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: a43d3a91aac92524d91719a53a336963, type: 3}
---- !u!114 &4191097314296295498 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4191097314438831156, guid: a43d3a91aac92524d91719a53a336963, type: 3}
-  m_PrefabInstance: {fileID: 4191097314296295497}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c51a5e05765c1b846b6a9abb3e299c92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1001 &4681522930927230053
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4681522929772170420, guid: 3304e53de54130d4bb1db3d84810caea, type: 3}
-      propertyPath: pokemon.Array.data[0]._base
-      value: 
-      objectReference: {fileID: 11400000, guid: f1481d3f7d670e34c91949e7ca833967, type: 2}
-    - target: {fileID: 4681522929772170420, guid: 3304e53de54130d4bb1db3d84810caea, type: 3}
-      propertyPath: pokemon.Array.data[1]._base
-      value: 
-      objectReference: {fileID: 11400000, guid: 122992e452fc18a46b11a73040dc846b, type: 2}
-    - target: {fileID: 4681522929772170421, guid: 3304e53de54130d4bb1db3d84810caea, type: 3}
-      propertyPath: m_Name
-      value: Player vs Lorelei
-      objectReference: {fileID: 0}
-    - target: {fileID: 4681522929772170422, guid: 3304e53de54130d4bb1db3d84810caea, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4681522929772170422, guid: 3304e53de54130d4bb1db3d84810caea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -22.69089
-      objectReference: {fileID: 0}
-    - target: {fileID: 4681522929772170422, guid: 3304e53de54130d4bb1db3d84810caea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 9.264896
-      objectReference: {fileID: 0}
-    - target: {fileID: 4681522929772170422, guid: 3304e53de54130d4bb1db3d84810caea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 101.22366
-      objectReference: {fileID: 0}
-    - target: {fileID: 4681522929772170422, guid: 3304e53de54130d4bb1db3d84810caea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4681522929772170422, guid: 3304e53de54130d4bb1db3d84810caea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4681522929772170422, guid: 3304e53de54130d4bb1db3d84810caea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4681522929772170422, guid: 3304e53de54130d4bb1db3d84810caea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4681522929772170422, guid: 3304e53de54130d4bb1db3d84810caea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4681522929772170422, guid: 3304e53de54130d4bb1db3d84810caea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4681522929772170422, guid: 3304e53de54130d4bb1db3d84810caea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3304e53de54130d4bb1db3d84810caea, type: 3}
---- !u!114 &4681522930927230054 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4681522929772170423, guid: 3304e53de54130d4bb1db3d84810caea, type: 3}
-  m_PrefabInstance: {fileID: 4681522930927230053}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c51a5e05765c1b846b6a9abb3e299c92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &6733100518930619017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4153,6 +3987,147 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffe8c5bd7f9ab1643b3216ccd73b8b4e, type: 3}
+--- !u!1001 &6845485078201864369
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6845485076971704330, guid: 0b3d46818ffc59b4bb22617d32702275, type: 3}
+      propertyPath: m_Name
+      value: PriorityBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845485076971704332, guid: 0b3d46818ffc59b4bb22617d32702275, type: 3}
+      propertyPath: trainerAI
+      value: 
+      objectReference: {fileID: 21209375}
+    - target: {fileID: 6845485076971704335, guid: 0b3d46818ffc59b4bb22617d32702275, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845485076971704335, guid: 0b3d46818ffc59b4bb22617d32702275, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -22.69089
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845485076971704335, guid: 0b3d46818ffc59b4bb22617d32702275, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.264896
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845485076971704335, guid: 0b3d46818ffc59b4bb22617d32702275, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 101.22366
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845485076971704335, guid: 0b3d46818ffc59b4bb22617d32702275, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845485076971704335, guid: 0b3d46818ffc59b4bb22617d32702275, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845485076971704335, guid: 0b3d46818ffc59b4bb22617d32702275, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845485076971704335, guid: 0b3d46818ffc59b4bb22617d32702275, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845485076971704335, guid: 0b3d46818ffc59b4bb22617d32702275, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845485076971704335, guid: 0b3d46818ffc59b4bb22617d32702275, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845485076971704335, guid: 0b3d46818ffc59b4bb22617d32702275, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2707245380741199502, guid: 0b3d46818ffc59b4bb22617d32702275, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 0b3d46818ffc59b4bb22617d32702275, type: 3}
+--- !u!114 &6845485078201864370 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6845485076971704332, guid: 0b3d46818ffc59b4bb22617d32702275, type: 3}
+  m_PrefabInstance: {fileID: 6845485078201864369}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51a5e05765c1b846b6a9abb3e299c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &8641254473736580564
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8641254473973192480, guid: cc703c8ac4edd3f4d950f7c81cccf334, type: 3}
+      propertyPath: m_Name
+      value: Player vs PriorityBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641254473973192483, guid: cc703c8ac4edd3f4d950f7c81cccf334, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641254473973192483, guid: cc703c8ac4edd3f4d950f7c81cccf334, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -22.69089
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641254473973192483, guid: cc703c8ac4edd3f4d950f7c81cccf334, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.264896
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641254473973192483, guid: cc703c8ac4edd3f4d950f7c81cccf334, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 101.22366
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641254473973192483, guid: cc703c8ac4edd3f4d950f7c81cccf334, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641254473973192483, guid: cc703c8ac4edd3f4d950f7c81cccf334, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641254473973192483, guid: cc703c8ac4edd3f4d950f7c81cccf334, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641254473973192483, guid: cc703c8ac4edd3f4d950f7c81cccf334, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641254473973192483, guid: cc703c8ac4edd3f4d950f7c81cccf334, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641254473973192483, guid: cc703c8ac4edd3f4d950f7c81cccf334, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641254473973192483, guid: cc703c8ac4edd3f4d950f7c81cccf334, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cc703c8ac4edd3f4d950f7c81cccf334, type: 3}
+--- !u!114 &8641254473736580565 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8641254473973192482, guid: cc703c8ac4edd3f4d950f7c81cccf334, type: 3}
+  m_PrefabInstance: {fileID: 8641254473736580564}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51a5e05765c1b846b6a9abb3e299c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &9219444813660698970
 PrefabInstance:
   m_ObjectHideFlags: 0
