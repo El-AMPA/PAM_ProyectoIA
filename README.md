@@ -104,6 +104,9 @@ Su Dewgong conoce Descanso, un ataque de tipo psíquico que duerme al usuario y 
 
 Esto es muy fácil de abusar, ya que si tienes un Pokémon de tipo Lucha con un ataque para incrementar tus estadísticas (Danza Espada) puedes usarlo constantemente contra Dewgong y posteriormente barrer el equipo enemigo.
 
+A continuación se puede ver un vídeo de la batalla contra la IA básica:
+[![IMAGE ALT TEXT HERE](Recursos/Loreleivideo.png)](Recursos/Lorelei_1.mp4)
+
 ### **Mejora:**
 
 Utilizar siempre el movimiento con ventaja de tipo no tiene sentido. 
@@ -128,9 +131,8 @@ Lorelei usará dos de sus icónicos Pokémon: Dewgong con Descanso y un Lapras.
 
 El equipo del jugador consistirá de varios Pokémon, entre ellos Heracross, que tendrá que utilizar contra Dewgong para abusar de su IA y alzarse con la victoria.
 
-El jugador vs la IA Simple: Albar bobo
-
-El jugador vs la IA Mejorada: Albar bobo
+A continuación se puede ver un vídeo de la batalla contra la IA mejorada:
+[![IMAGE ALT TEXT HERE](Recursos/Loreleivideo.png)](Recursos/Lorelei_2.mp4)
 
 ---
 
@@ -144,6 +146,9 @@ Por desgracia, lo que destaca en el conocimiento de Pokémon de tipo fuego, care
 
 En la primera Generación, cada jefe tenía su manera peculiar de utilizar objetos, pero Blaine es el peor con diferencia. En cada turno, Blaine tiene un 25% de probabilidades de utilizar una Poción Máxima, ignorando complétamente si su Pokémon esté sano o no. Si utiliza una de estas pociones con un Pokémon al máximo de vida, perderá el turno.
 
+A continuación se puede ver un vídeo de la batalla contra la IA básica:
+[![IMAGE ALT TEXT HERE](Recursos/Blainevideo.png)](Recursos/Blaine_1.mp4)
+
 ### **Mejora:**
 
 La mejora de este comportamiento es bastante sencilla. 
@@ -156,9 +161,8 @@ En este ejemplo, Blaine usará el equipo que empleaba en los juegos originales.
 
 El equipo del jugador consistirá de varios Pokémon que formaban parte de la mayoría de entrenadores Pokémon de la época.
 
-El jugador vs la IA Simple: Albar bobo
-
-El jugador vs la IA Mejorada: Albar bobo
+A continuación se puede ver un vídeo de la batalla contra la IA mejorada:
+[![IMAGE ALT TEXT HERE](Recursos/Blainevideo.png)](Recursos/Blaine_2.mp4)
 
 ---
 
@@ -173,6 +177,9 @@ Como está implementada la IA hasta este momento, busca el ataque más poderoso 
 En este ejemplo se plantea esta posible situación. El enemigo tiene un grovyle que derrotará a nuestro milotic con 2 Hojas Afiladas. Sin embargo, como es más lento que nosotros, le derrotaremos con 2 Rayos Hielo.
 
 Si en el segundo turno el Grovyle utilizara Ataque Rápido en vez del ataque que hace más daño, se alzaría con la victoria.
+
+A continuación se puede ver un vídeo de la batalla contra la IA básica:
+[![IMAGE ALT TEXT HERE](Recursos/Joserravideo.png)](Recursos/Joserra_1.mp4)
 
 ### **Mejora:**
 
@@ -194,9 +201,8 @@ Como se explicaba en el primer apartado, el oponente tendrá un único Grovyle c
 
 El jugador dispondrá de un rápido Milotic con Rayo Hielo.
 
-El jugador vs la IA Simple: Albar bobo
-
-El jugador vs la IA Mejorada: Albar bobo
+A continuación se puede ver un vídeo de la batalla contra la IA mejorada:
+[![IMAGE ALT TEXT HERE](Recursos/Joserravideo.png)](Recursos/Joserra_2.mp4)
 
 ---
 
@@ -209,6 +215,9 @@ Este ejemplo es de los más extraños, pero es de los fallos que más se explota
 Hay ciertos tipos que tienen inmunidad defensiva ante distintos tipos (Volador es inmune a ataques de tipo Tierra y Tierra es inmune a ataques de tipo eléctrico).
 
 Si la IA siempre usa ataques con ventaja de tipo, podemos predecir estos intercambios fácilmente y si el enemigo está envenenado, conseguir derrotar a enemigos con una estrategia bastante sucia.
+
+A continuación se puede ver un vídeo de la batalla contra la IA básica:
+[![IMAGE ALT TEXT HERE](Recursos/Jorgevideo.png)](Recursos/Jorge_1.mp4)
 
 ### **Mejora:**
 
@@ -224,9 +233,8 @@ El equipo del jugador consistirá de Jumpluff, un Pokémon de tipo Volador-Plant
 
 El objetivo de este combate es aplicar Tóxico con Jumpluff y después de que este sea derrotado, intercambiar constántemente entre Steelix y Gyarados para abusar la IA y derrotar al enemigo con el daño pasivo de Tóxico.
 
-El jugador vs la IA Simple: Albar bobo
-
-El jugador vs la IA Mejorada: Albar bobo
+A continuación se puede ver un vídeo de la batalla contra la IA mejorada:
+[![IMAGE ALT TEXT HERE](Recursos/Jorgevideo.png)](Recursos/Jorge_2.mp4)
 
 ---
 
@@ -237,6 +245,9 @@ El jugador vs la IA Mejorada: Albar bobo
 En la mayoría de entregas de Pokémon, tras perder un Pokémon, la IA enemiga sacará al siguiente Pokémon en orden de su equipo. No Saca al mejor Pokémon que tenga contra el nuestro.
 
 De este modo, si tenemos una ventaja contra el primer, segundo y tercer Pokémon del enemigo, pero somos muy débiles contra el cuarto, no lo veremos hasta el final del combate, lo cual tiene bastante poco sentido.
+
+A continuación se puede ver un vídeo de la batalla contra la IA básica:
+[![IMAGE ALT TEXT HERE](Recursos/Mikuvideo.png)](Recursos/Miku_1.mp4)
 
 ### **Mejora:**
 
@@ -259,9 +270,8 @@ El equipo de Hatsune Miku consta de 4 Pokémon. 3 de ellos son débiles Pokémon
 
 El jugador utilizará un Metagross, que derrotará sin ningún tipo de problema a los 3 primeros Pokémon de Miku, pero de ninguna manera podrá derrotar a Arceus.
 
-El jugador vs la IA Simple: Albar bobo
-
-El jugador vs la IA Mejorada: Albar bobo
+A continuación se puede ver un vídeo de la batalla contra la IA mejorada:
+[![IMAGE ALT TEXT HERE](Recursos/Mikuvideo.png)](Recursos/Miku_2.mp4)
 
 ---
 
@@ -273,8 +283,8 @@ Este temible oponente presentará un duro reto ante cualquier entrenador. Con su
 
 El jugador podrá enfrentarse a él con la IA Básica o con la Mejorada, y se apreciará si realmente supone un cambio sustancial.
 
-### **Vídeos:**
+A continuación se puede ver un vídeo de la batalla contra la IA básica:
+[![IMAGE ALT TEXT HERE](Recursos/Sansvideo.png)](Recursos/Sans_1.mp4)
 
-El jugador vs la IA Simple: Albar bobo
-
-El jugador vs la IA Mejorada: Albar bobo
+A continuación se puede ver un vídeo de la batalla contra la IA mejorada:
+[![IMAGE ALT TEXT HERE](Recursos/Sansvideo.png)](Recursos/Sans_2.mp4)
