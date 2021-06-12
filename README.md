@@ -122,7 +122,11 @@ En resumen:
 - Cuando el Pokémon tiene vida media: Utilizará el ataque más poderoso.
 - Cuando el Pokémon tiene poca vida: Utilizará movimientos que restauren su vida.
 
-### **Vídeos:**
+### **Combate:**
+
+Lorelei usará dos de sus icónicos Pokémon: Dewgong con Descanso y un Lapras.
+
+El equipo del jugador consistirá de varios Pokémon, entre ellos Heracross, que tendrá que utilizar contra Dewgong para abusar de su IA y alzarse con la victoria.
 
 El jugador vs la IA Simple: Albar bobo
 
@@ -146,7 +150,11 @@ La mejora de este comportamiento es bastante sencillo.
 
 La IA mejorada utilizará una Poción Máxima cuando su Pokémon esté a menos del 30% de vida. También utilizará una Cura Total cuando su Pokémon sufra una condición de estado.
 
-### **Vídeos:**
+### **Combate:**
+
+En este ejemplo, Blaine usará el equipo que empleaba en los juegos originales.
+
+El equipo del jugador consistirá de varios Pokémon que formaban parte de la mayoría de entrenadores Pokémon de la época.
 
 El jugador vs la IA Simple: Albar bobo
 
@@ -154,18 +162,115 @@ El jugador vs la IA Mejorada: Albar bobo
 
 ---
 
-## **Jorge con el Perro y los movimientos con Prioridad:**
+## **Ninja Joserra y los movimientos con Prioridad:**
 
 ### **Contexto:**
 
-Como se explicó en el ejemplo de Lorelei, la selección de movimientos era muy básica.
+Como se explicó en el ejemplo de Lorelei, la selección de movimientos era muy básica en los juegos originales.
 
+Como está implementada la IA hasta este momento, busca el ataque más poderoso en cada turno. Sin embargo, hay ocasiones en las que nos interesará utilizar un ataque con prioridad (un ataque de prioridad 1 siempre irá antes que un ataque de prioridad 0 aunque el usuario sea más lento).
+
+En este ejemplo se plantea esta posible situación. El enemigo tiene un grovyle que derrotará a nuestro milotic con 2 Hojas Afildas. Sin embargo, como es más lento que nosotros, le derrotaremos con 2 Rayos Hielo.
+
+Si en el segundo turno el Grovyle utilizara Ataque Rápido en vez del ataque que hace más daño, se alzaría con la victoria.
 
 ### **Mejora:**
 
-La mejora de este comportamiento es bastante sencillo. 
+La mejora de este comportamiento es algo más compleja, pero efectiva.
 
-La IA mejorada utilizará una Poción Máxima cuando su Pokémon esté a menos del 30% de vida. También utilizará una Cura Total cuando su Pokémon sufra una condición de estado.
+Cuando iteramos sobre los movimientos del usuario para calcular el movimiento más letal, comprobamos si este ataque derrotaría al enemigo, y distinguimos dos posibles casos:
+
+- **Si el ataque derrota al enemigo y no tiene prioridad:** Lo añadimos a un vector de ataques que derrotan al enemigo. Al finalizar el recorrido, utilizamos un movimiento aleatorio de uno de estos ataques.
+
+    El razonamiento es bastante simple. Si derrotamos al oponente con 3 ataques distintos, nos da completamente igual cual utilizar. Si siempre utilizamos el más poderoso sería muy predecible y el oponente podría cambiar de Pokémon a uno con inmunidad a ese ataque en concreto.
+
+- **Si el ataque derrota al enemigo y tiene prioridad:** Ignoramos cualquier otro movimiento que derrote al enemigo y siempre utilizamos este ataque. El enemigo tendría que cambiar de Pokémon o perder el actual. 
+
+Si ninguno de los ataques disponibles consigue derrotar al enemigo, elegiremos el ataque  que más vida le quite al oponente como se explicó anteriormente.
+
+### **Combate:**
+
+Como se explicaba en el primer apartado, el oponente tendrá un único Grovyle con Hoja Afilada y Ataque Rápido.
+
+El jugador dispondrá de un rápido Milotic con Rayo Hielo.
+
+El jugador vs la IA Simple: Albar bobo
+
+El jugador vs la IA Mejorada: Albar bobo
+
+---
+
+## **Jorge con el Perro y detección de intercambios de Pokémon:**
+
+### **Contexto:**
+
+Este ejemplo es de los más extraños, pero es de los fallos que más se explotan en Speedruns o retos Nuzlocke de Pokémon.
+
+Hay ciertos tipos que tienen inmunidad defensiva ante distintos tipos (Volador es inmune a ataques de tipo Tierra y Tierra es inmune a ataques de tipo eléctrico).
+
+Si la IA siempre usa ataques con ventaja de tipo, podemos predecir estos intercambios fácilmente y si el enemigo está envenenado, conseguir derrotar a enemigos con una estrategia bastante sucia.
+
+### **Mejora:**
+
+Para mejorar este comportamiento, cada vez seguida que el oponente cambie a un Pokémon, la IA lo detectará. Si el oponente lo hace 3 veces seguidas, calculará el ataque más efectivo no sobre el Pokémon que está ahora en el campo de batalla, sino contra el que la IA predice que va a sacar.
+
+Si el Pokémon de la IA derrota a un oponente o el enemigo ataca, se reinicia el contador. 
+
+### **Combate:**
+
+En este combate, el oponente utilizará un poderosísimo Lickytung de nivel 100. Un Pokémon muy defensivo, pero tremendamente lento, con ataques con ventaja de tipo sobre todos nuestros Pokémon.
+
+El equipo del jugador consistirá de Jumpluff, un Pokémon de tipo Volador-Planta; Gyarados, de tipo Agua-Volador y Steelix, de tipo Tierra-Acero.
+
+El objetivo de este combate es aplicar Tóxico con Jumpluff y después de que este sea derrotado, intercambiar constántemente entre Steelix y Gyarados para abusar la IA y derrotar al enemigo con el daño pasivo de Tóxico.
+
+El jugador vs la IA Simple: Albar bobo
+
+El jugador vs la IA Mejorada: Albar bobo
+
+---
+
+## **Hatsune Miku y la mejora de intercambios:**
+
+### **Contexto:**
+
+En la mayoría de entregas de Pokémon, tras perder un Pokémon, la IA enemiga sacará al siguiente Pokémon en orden de su equipo. No Saca al mejor Pokémon que tenga contra el nuestro.
+
+De este modo, si tenemos una ventaja contra el primer, segundo y tercer Pokémon del enemigo, pero somos muy débiles contra el cuarto, no lo veremos hasta el final del combate, lo cual tiene bastante poco sentido.
+
+### **Mejora:**
+
+Para mejorar este comportamiento, cuando la IA pierde un Pokémon, recorremos todos sus Pokémon con vida y les otogamos una serie de puntos si cumplen ciertas condiciones. Elegiremos el Pokémon con más puntos.
+
+Los puntos son los siguientes si el Pokémon tiene...:
+
+ - Un ataque ofensivo con ventaja de tipo: 1 pto
+ - Un ataque ofensivo que derrota al oponente: 2 ptos
+ - Un ataque ofensivo con prioridad que derrota al oponente: 99 ptos
+ - Resistencia contra uno de los tipos del rival: 1 pto
+ - Debilidad contra uno de los tipos del rival: -1 pto
+
+De este modo, la IA sacará al mejor Pokémon que tenga contra el Pokémon que tienes actualmente.
+
+### **Combate:**
+
+El equipo de Hatsune Miku consta de 4 Pokémon. 3 de ellos son débiles Pokémon de tipo bicho. El último de ellos es Arceus, un poderoso Pokémon legendario que convertirá en papilla al Pokémon del jugador.
+
+El jugador utilizará un Metagross, que derrotará sin ningún tipo de problema a los 3 primeros Pokémon de Miku, pero de ninguna manera podrá derrotar a Arceus.
+
+El jugador vs la IA Simple: Albar bobo
+
+El jugador vs la IA Mejorada: Albar bobo
+
+---
+
+## **Sans:**
+
+### **Combate:**
+
+Este temible oponente presentará un duro reto ante cualquier entrenador. Con su balanceado y poderoso equipo, el entrenador tendrá que hacer uso de todo lo que ha  aprendido hasta ahora.
+
+El jugador podrá enfrentarse a él con la IA Básica o con la Mejorada, y se apreciará si realmente supone un cambio sustancial.
 
 ### **Vídeos:**
 
