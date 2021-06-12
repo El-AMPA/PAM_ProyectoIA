@@ -104,9 +104,6 @@ Su Dewgong conoce Descanso, un ataque de tipo psíquico que duerme al usuario y 
 
 Esto es muy fácil de abusar, ya que si tienes un Pokémon de tipo Lucha con un ataque para incrementar tus estadísticas (Danza Espada) puedes usarlo constantemente contra Dewgong y posteriormente barrer el equipo enemigo.
 
-Se puede ver una prueba en vídeo de la batalla contra la IA básica a continuación:
-[![IMAGE ALT TEXT HERE](Recursos/Loreleivideo.png)](Recursos/Lorelei_1.mp4)
-
 ### **Mejora:**
 
 Utilizar siempre el movimiento con ventaja de tipo no tiene sentido. 
@@ -125,8 +122,11 @@ En resumen:
 - Cuando el Pokémon tiene vida media: Utilizará el ataque más poderoso.
 - Cuando el Pokémon tiene poca vida: Utilizará movimientos que restauren su vida.
 
-Se puede ver una prueba en vídeo de la batalla contra la IA mejorada a continuación:
-[![IMAGE ALT TEXT HERE](Recursos/Loreleivideo.png)](Recursos/Lorelei_2.mp4)
+### **Vídeos:**
+
+El jugador vs la IA Simple: Albar bobo
+
+El jugador vs la IA Mejorada: Albar bobo
 
 ---
 
@@ -142,7 +142,30 @@ En la primera Generación, cada jefe tenía su manera peculiar de utilizar objet
 
 ### **Mejora:**
 
-La mejora de este comportamiento es bastante sencillo. a
+La mejora de este comportamiento es bastante sencillo. 
+
+La IA mejorada utilizará una Poción Máxima cuando su Pokémon esté a menos del 30% de vida. También utilizará una Cura Total cuando su Pokémon sufra una condición de estado.
+
+### **Vídeos:**
+
+El jugador vs la IA Simple: Albar bobo
+
+El jugador vs la IA Mejorada: Albar bobo
+
+---
+
+## **Jorge con el Perro y los movimientos con Prioridad:**
+
+### **Contexto:**
+
+Como se explicó en el ejemplo de Lorelei, la selección de movimientos era muy básica.
+
+
+### **Mejora:**
+
+La mejora de este comportamiento es bastante sencillo. 
+
+La IA mejorada utilizará una Poción Máxima cuando su Pokémon esté a menos del 30% de vida. También utilizará una Cura Total cuando su Pokémon sufra una condición de estado.
 
 ### **Vídeos:**
 
