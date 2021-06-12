@@ -1,3 +1,7 @@
+/*
+ * Clase que representa un item del juego, para su posterior almacenamiento en ItemsDB.
+ */
+
 using System;
 using System.Collections;
 using System.Collections.Generic;

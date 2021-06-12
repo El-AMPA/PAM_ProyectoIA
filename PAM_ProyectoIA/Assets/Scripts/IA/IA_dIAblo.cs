@@ -1,3 +1,7 @@
+/*
+ * Esta clase implementa la IA 'inteligente'. Su funcionamiento está explicado en la documentación del proyecto.
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;

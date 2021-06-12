@@ -1,3 +1,8 @@
+/*
+ * La clase BattleUnit representa a cada entrenador presente en la batalla, y lleva el control de sus atributos: el HUD de batalla,
+ * el pokémon que está luchando en ese momento y las animaciones.
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

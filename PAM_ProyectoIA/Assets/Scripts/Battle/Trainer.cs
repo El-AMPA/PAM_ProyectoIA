@@ -1,3 +1,7 @@
+/*
+ * Esta clase contiene la información de cada entrenador. Su nombre, su sprite, y en caso de que no sea el jugador, la IA que utilizará.
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

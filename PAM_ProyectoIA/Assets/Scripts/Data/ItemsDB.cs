@@ -1,3 +1,8 @@
+/*
+ * Esta clase implementa una base de datos con los Items que puede usar la IA: su nombre, el texto que se muestra cuando alguien lo
+ * utiliza, y sus efectos (implementados como funciones lambda).
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

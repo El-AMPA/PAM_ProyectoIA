@@ -1,3 +1,7 @@
+/*
+ * Esta clase es la responsable de los diálogos explicativos antes de cada batalla. Funciona de manera muy similar a la clase BattleDialogBox.
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

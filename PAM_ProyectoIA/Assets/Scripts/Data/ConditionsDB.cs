@@ -1,3 +1,8 @@
+/*
+ * Esta clase implementa una base de datos que contiene la informción de cada estado alterado que puede sufrir un pokémon: el texto que se
+ * mostrará cuando alguien sea afectado, sus efectos (implementados como funciones lambda) y su duración (en caso de que el estado sea volátil)
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

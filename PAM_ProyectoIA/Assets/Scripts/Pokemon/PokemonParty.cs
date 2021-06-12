@@ -1,3 +1,8 @@
+/*
+ * Esta clase representa el grupo de pokémon de un entrenador. Contiene referencias a cada pokémon presente además de métodos para
+ * obtener pokémon que aún no están debilitados y también para consumir distintos items.
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,3 +1,7 @@
+/*
+ * Clase que representa un estado alterado, para su posterior almacenamiento y uso en ConditionsDB.
+ */
+
 using System;
 using System.Collections;
 using System.Collections.Generic;

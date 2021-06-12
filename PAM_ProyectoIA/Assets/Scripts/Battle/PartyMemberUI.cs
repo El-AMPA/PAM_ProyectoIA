@@ -1,3 +1,7 @@
+/*
+ * Esta clase se encarga de cada una de las unidades de información de nuestros Pokémon presentes en la clase PartyScreen.
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

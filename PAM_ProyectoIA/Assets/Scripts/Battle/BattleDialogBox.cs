@@ -1,3 +1,9 @@
+/* 
+ * Este script se encarga de la implementación de la clase BattleDialogBox, que controla la caja de  texto que
+ * funciona como interfaz del juego. Activa/desactiva los menús y diálogos, resalta las opciones que está seleccionando
+ * el jugador, etc.
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

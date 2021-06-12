@@ -1,3 +1,8 @@
+/*
+ * Esta clase implementa a cada Pokémon del juego en combate. Contiene toda la información del pokémon así como su salud actual, 
+ * sus estados alterados, y métodos para interactuar con el medio durante la batalla (atacar, hacerse daño, etc).
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;

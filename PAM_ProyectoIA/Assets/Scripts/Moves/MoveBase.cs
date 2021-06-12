@@ -1,3 +1,10 @@
+/*
+ * Esta clase implementa los movimientos propiamente dichos, en forma de ScriptableObject, es decir, un objeto que se puede crear desde
+ * el editor de Unity para meterle desde ahí toda la información necesaria.
+ * Esta clase contiene toda la información de los movimientos: sus efectos, su tipo, sus probabilidades de acertar, su objetivo,
+ * sus efectos secundarios (si es que los tiene), etc.
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

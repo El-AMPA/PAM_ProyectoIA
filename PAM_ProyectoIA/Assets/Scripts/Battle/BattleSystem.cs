@@ -1,3 +1,14 @@
+/*
+ * Esta clase implementa la lógica de la batalla. Al principio, inicializa todos los elementos que formarán parte de esta, mientras
+ * muestra sus respectivos textos en la caja de texto. Tiene una máquina de estados que indica el punto de la batalla en el que nos
+ * encontramos (comienzo, el jugador está seleccionando acción o seleccionando movimiento, el turno está en curso, el juego está ocupado,
+ * estamos en la pantalla de selección de Pokémon, se ha elegido una opción de batalla, o la batalla ha acabado). Para cualquiera de estos
+ * estados, se llamará a la función correspondiente que haga la acción necesaria. Se activará el menú de selección si es el turno del
+ * jugador, y después se invocará la función RunTurns para ejecutar el movimiento en cuestión. Tras cada turno se aplicarán los efectos
+ * alterados que tenga cada pokémon (si los hay) y se comprobará si la batalla se ha acabado (si uno de los dos bandos se ha quedado sin
+ * ningún pokémon). Si no, el jugador volverá a elegir una acción, y así sucesivamente.
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

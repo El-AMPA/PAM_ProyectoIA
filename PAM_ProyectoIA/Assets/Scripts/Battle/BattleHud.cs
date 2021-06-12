@@ -1,3 +1,8 @@
+/*
+ * Este script se encarga de la implementación de el HUD de batalla, es decir, la interfaz del estado de cada pokémon
+ * (estado de salud, estados alterados, etc). Una instancia llevará el estado de nuestro pokémon y otra el del enemigo.
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

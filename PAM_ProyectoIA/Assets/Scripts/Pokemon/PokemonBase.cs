@@ -1,3 +1,8 @@
+/*
+ * Clase que almacena la información persistente de cada Pokémon en forma de scriptableObject, es decir, objetos que se pueden
+ * crear desde el editor de Unity y poner toda su información desde ahí: tipo, sprites, nombre, descripción, nivel...
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

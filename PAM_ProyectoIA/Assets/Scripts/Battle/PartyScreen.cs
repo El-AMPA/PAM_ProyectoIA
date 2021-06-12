@@ -1,3 +1,8 @@
+/*
+ * Esta clase se encarga de la pantalla de selección de Pokémon cuando queremos cambiar a otro distinto en medio de la partida.
+ * Coge la información de los Pokémon en nuestro grupo y la muestra por pantalla, permitiendo seleccionarlos indivisualmente.
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

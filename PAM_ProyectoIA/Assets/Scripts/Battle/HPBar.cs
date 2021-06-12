@@ -1,3 +1,7 @@
+/*
+ * Esta clase controla las barras de vida, así como su animación cuando ésta disminuye.
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
