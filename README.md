@@ -24,9 +24,9 @@ Cada Pokémon tiene su propio conjunto de estadísticas:
 - **Velocidad:** Determina la prioridad que tendrán los ataques del Pokémon sobre los del rival. (esto puede variar dependiendo del ataque)
 - **HP:** Los puntos de vida máximos con los que cuenta el Pokémon.
 
-Además, cada Pokémon es de uno (o dos) tipos distintos, que determinarán la efectividad de sus ataques y su resistencia ante los ataques del contringante.
+Además, cada Pokémon es de uno (o dos) tipos distintos, que determinarán la efectividad de sus ataques y su resistencia ante los ataques del contrincante.
 
-La relación entre los tipos es muy sencilla. Un tipo puede ser muy eficaz ofensivamente contra otro (Fuego es muy efectivo contra agua), pero también pueden ser muy resistentes defensivamente contra otros (Acero resiste ataques de tipo roca).
+La relación entre los tipos es muy sencilla. Un tipo puede ser muy eficaz ofensivamente contra otro (Fuego es muy efectivo contra planta), pero también pueden ser muy resistentes defensivamente contra otros (Acero resiste ataques de tipo roca).
 
 ![Tabla de tipos](Recursos/tablatipos.jpg)
 
@@ -60,7 +60,7 @@ Cada Pokémon podrá ser afectado por solo una condición de estado a la vez.
 - **Envenenamiento:** Al final del turno, el Pokémon perderá 1/8 de su vida máxima. Dura indefinidamente.
 - **Tóxico:** Funciona de forma similar al Envenenamiento pero en cada turno quita el doble de daño. También dura indefinidamente.
 - **Quemadura:** Al final del turno, el Pokémon perderá 1/16 de su vida máxima. También reduce el ataque físico del Pokémon a la mitad. Dura indefinidamente.
-- **Confusión:** Tras seleccionar un movimiento, el usuario tiene un 25% de probabilidades de perder el turno y golpearse a sí mismo. Dura de 1 a 4 turnos. Es la única condición de estado que puede aplicarse junto a las demás.
+- **Confusión:** Tras seleccionar un movimiento, el usuario tiene un 25% de probabilidades de perder el turno y golpearse a sí mismo. Dura de 1 a 4 turnos. Es la única condición de estado que es volátil, lo que quiere decir que puede aplicarse junto a las demás y se cura al cambiar de Pokémon.
 
 ## Objetos:
 
@@ -112,7 +112,7 @@ Por ello, en cada turno, hemos hecho que el Pokémon itere por sus movimientos y
 
 Para el uso de movimientos de condición de estado (Parálisis, Confusión...), lo óptimo es utilizarlos cuando el usuario esté alto de vida y el enemigo no esté sufriendo ya una Condición de Estado. Intentar paralizar al enemigo cuando ya está paralizado es regalar un turno.
 
-Las mejoras de stats también siguen esta regla. Bajarle la defensa al rival se aprovecha más cuando el usuario está alto de vida.
+Las mejoras de stats también siguen esta regla. Bajarle la defensa al rival o subir nuesto ataque se aprovecha más cuando el usuario está alto de vida. Además, no tiene mucho sentido usar movimientos de cambio de stats más de una o dos veces porque el oponente puede aprovechar estos turnos para subir sus propios stats o derrotar a nuestro Pokémon.
 
 En el caso de Descanso, nos interesa utilizarlo cuando el usuario está bajo de vida para aprovecharlo al máximo.
 
@@ -146,9 +146,9 @@ En la primera Generación, cada jefe tenía su manera peculiar de utilizar objet
 
 ### **Mejora:**
 
-La mejora de este comportamiento es bastante sencillo. 
+La mejora de este comportamiento es bastante sencilla. 
 
-La IA mejorada utilizará una Poción Máxima cuando su Pokémon esté a menos del 30% de vida. También utilizará una Cura Total cuando su Pokémon sufra una condición de estado.
+La IA mejorada utilizará una Poción Máxima cuando su Pokémon esté a menos del 30% de vida. También utilizará una Cura Total cuando su Pokémon sufra una condición de estado y su Pokémon tenga un 80% de la vida o más (ya que no tiene mucho sentido curar a un Pokémon de su estado si va a ser derrotado inmediatamente después).
 
 ### **Combate:**
 
@@ -170,7 +170,7 @@ Como se explicó en el ejemplo de Lorelei, la selección de movimientos era muy 
 
 Como está implementada la IA hasta este momento, busca el ataque más poderoso en cada turno. Sin embargo, hay ocasiones en las que nos interesará utilizar un ataque con prioridad (un ataque de prioridad 1 siempre irá antes que un ataque de prioridad 0 aunque el usuario sea más lento).
 
-En este ejemplo se plantea esta posible situación. El enemigo tiene un grovyle que derrotará a nuestro milotic con 2 Hojas Afildas. Sin embargo, como es más lento que nosotros, le derrotaremos con 2 Rayos Hielo.
+En este ejemplo se plantea esta posible situación. El enemigo tiene un grovyle que derrotará a nuestro milotic con 2 Hojas Afiladas. Sin embargo, como es más lento que nosotros, le derrotaremos con 2 Rayos Hielo.
 
 Si en el segundo turno el Grovyle utilizara Ataque Rápido en vez del ataque que hace más daño, se alzaría con la victoria.
 
@@ -250,6 +250,7 @@ Los puntos son los siguientes si el Pokémon tiene...:
  - Resistencia contra uno de los tipos del rival: 1 pto
  - Debilidad contra uno de los tipos del rival: -1 pto
 
+Al puntuar a cada Pokémon solo se tiene en cuenta su movimiento con mayor puntuación, ya que por ejemplo si un Pokémon tuviera 4 movimientos muy eficaces (lo cual no es sustancialmente mejor que 1 si ninguno es capaz de derrotar al oponente) y fuera muy débil defensivamente no debería tener una puntuación muy alta.
 De este modo, la IA sacará al mejor Pokémon que tenga contra el Pokémon que tienes actualmente.
 
 ### **Combate:**
